@@ -1,0 +1,3797 @@
+{\rtf1\ansi\ansicpg936\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 HelveticaNeue-Thin;\f2\fnil\fcharset0 HelveticaNeue-Bold;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fnil\fcharset0 Menlo-Bold;\f5\fnil\fcharset0 HelveticaNeue-Medium;
+}
+{\colortbl;\red255\green255\blue255;\red29\green143\blue181;\red38\green38\blue38;\red0\green0\blue0;
+\red255\green255\blue255;\red242\green242\blue242;\red153\green153\blue153;\red0\green0\blue0;\red29\green0\blue255;
+\red19\green85\blue52;\red118\green0\blue2;\red67\green67\blue67;\red37\green0\blue153;\red106\green0\blue67;
+\red50\green110\blue76;}
+{\*\expandedcolortbl;;\cssrgb\c10980\c62745\c76078;\cssrgb\c20000\c20000\c20000;\cssrgb\c0\c0\c0\c80000;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c96078\c96078\c96078;\cssrgb\c66275\c66275\c66275;\cssrgb\c0\c0\c0;\cssrgb\c16471\c0\c100000;
+\cssrgb\c6667\c40000\c26667;\cssrgb\c54510\c0\c0;\cssrgb\c33333\c33333\c33333;\cssrgb\c20000\c0\c66667;\cssrgb\c49804\c0\c33333;
+\cssrgb\c24706\c49804\c37255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl960\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://databricks.com/"}}{\fldrslt 
+\f0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 }}\pard\pardeftab720\sl960\partightenfactor0
+
+\f0\fs26 \cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+\pard\pardeftab720\sl960\qc\partightenfactor0
+
+\f1\fs40 \cf4 \cb5 \strokec4 IntroductionToSpark
+\fs24 (Python)
+\fs40 \cb1 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f0\fs26 \cf3 \cb6 \strokec3 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \'a0Import Notebook\cb1 \shad0 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl860\partightenfactor0
+
+\f2\b\fs72 \cf3 \cb5 Introduction to PySpark\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\b0\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl680\partightenfactor0
+
+\f2\b\fs48 \cf3 \cb5 Introduction\cb1 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\f0\b0\fs32 \cf3 \cb5 This project consists of two parts. In each section, we will perform a word count.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl500\partightenfactor0
+\ls1\ilvl0\cf3 \cb5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 In Part 1, we will introduce RDDs, Spark's primary low-level abstraction and several core concepts.\cb1 \
+\ls1\ilvl0\cb5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 In Part 2, we will introduce DataFrames, a higher-level abstraction than RDDs, along with SparkSQL allowing you to use SQL statements to query a temporary table.\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl640\partightenfactor0
+
+\f2\b\fs40 \cf3 \cb5 Part 1: Introduction to RDDs with Word Count Example\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\b0\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 Read Text File and Preview its Contents\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 lines\cf3 \strokec3  \cf8 \strokec8 =\cf3 \strokec3  \cf8 \strokec8 sc\cf3 \strokec3 .\cf8 \strokec8 textFile\cf3 \strokec3 (\cf9 \strokec9 "/FileStore/tables/dco0yfv21492497023780/synopses_list_imdb.txt"\cf3 \strokec3 )\
+\cf8 \strokec8 lines\cf3 \strokec3 .\cf8 \strokec8 take\cf3 \strokec3 (\cf10 \strokec10 3\cf3 \strokec3 )\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[31]: \cf12 \strokec12 \
+[u'',\
+ u'',\
+ u'In late summer 1945, guests are gathered for the wedding reception of Don Vito Corleone\\'s daughter Connie (Talia Shire) and Carlo Rizzi (Gianni Russo). Vito (Marlon Brando), the head of the Corleone Mafia family, is known to friends and associates as "Godfather." He and Tom Hagen (Robert Duvall), the Corleone family lawyer, are hearing requests for favors because, according to Italian tradition, "no Sicilian can refuse a request on his daughter\\'s wedding day." One of the men who asks the Don for a favor is Amerigo Bonasera, a successful mortician and acquaintance of the Don, whose daughter was brutally beaten by two young men because she refused their advances; the men received minimal punishment. The Don is disappointed in Bonasera, who\\'d avoided most contact with the Don due to Corleone\\'s nefarious business dealings. The Don\\'s wife is godmother to Bonasera\\'s shamed daughter, a relationship the Don uses to extract new loyalty from the undertaker. The Don agrees to have his men punish the young men responsible.Meanwhile, the Don\\'s youngest son Michael (Al Pacino), a decorated Marine hero returning from World War II service, arrives at the wedding and tells his girlfriend Kay Adams (Diane Keaton) anecdotes about his family, informing her about his father\\'s criminal life; he reassures her that he is different from his family and doesn\\'t plan to join them in their criminal dealings. The wedding scene serves as critical exposition for the remainder of the film, as Michael introduces the main characters to Kay. Fredo (John Cazale), Michael\\'s next older brother, is a bit dim-witted and quite drunk by the time he finds Michael at the party. Sonny (James Caan), the Don\\'s eldest child and next in line to become Don upon his father\\'s retirement, is married but he is a hot-tempered philanderer who sneaks into a bedroom to have sex with one of Connie\\'s bridesmaids, Lucy Mancini (Jeannie Linero). Tom Hagen is not related to the family by blood but is considered one of the Don\\'s sons because he was homeless when he befriended Sonny in the Little Italy neighborhood of Manhattan and the Don took him in. Now a talented attorney, Tom is being groomed for the important position of consigliere (counselor) to the Don, despite his non-Sicilian heritage.Also among the guests at the celebration is the famous singer Johnny Fontane (Al Martino), Corleone\\'s godson, who has come from Hollywood to petition Vito\\'s help in landing a movie role that will revitalize his flagging career. Jack Woltz (John Marley), the head of the studio, denies Fontane the part (a character much like Johnny himself), which will make him an even bigger star, but Don Corleone explains to Johnny: "I\\'m gonna make him an offer he can\\'t refuse." The Don also receives congratulatory salutations from Luca Brasi, a terrifying enforcer in the criminal underworld, and fills a request from the baker who made Connie\\'s wedding cake who wishes for his nephew Enzo to become an American citizen.After the wedding, Hagen is dispatched to Los Angeles to meet with Woltz, but Woltz angrily tells him that he will never cast Fontane in the role. Woltz holds a grudge because Fontane seduced and "ruined" a starlet who Woltz had been grooming for stardom and with whom he had a sexual relationship. Woltz is persuaded to give Johnny the role, however, when he wakes up early the next morning and feels something wet in his bed. He pulls back the sheets and finds himself in a pool of blood; he screams in horror when he discovers the severed head of his prized $600,000 stud horse, Khartoum, in the bed with him. (A deleted scene from the film implies that Luca Brasi (Lenny Montana), Vito\\'s top "button man" or hitman, is responsible.)Upon Hagen\\'s return, the family meets with Virgil "The Turk" Sollozzo (Al Lettieri), who is being backed by the rival Tattaglia family. He asks Don Corleone for financing as well as political and legal protection for importing and distributing heroin. Despite the huge profit to be made, Vito Corleone refuses, explaining that his political influence would be jeopardized by a move into the narcotics trade. The Don\\'s eldest son, Sonny, who had earlier urged the family to enter the narcotics trade, breaks ranks during the meeting and questions Sollozzo\\'s assurances as to the Corleone Family\\'s investment being guaranteed by the Tattaglia Family. His father, angry at Sonny\\'s dissension in a non-family member\\'s presence, privately rebukes him later. Don Corleone then dispatches Luca Brasi to infiltrate Sollozzo\\'s organization and report back with information. During the meeting, while Brasi is bent over to allow Bruno Tattaglia to light his cigarette, he is stabbed in the hand by Sollozzo, and is subsequently garroted by an assassin.Soon after his meeting with Sollozzo, Don Corleone is gunned down in an assassination attempt just outside his office, and it is not immediately known whether he has survived. Fredo Corleone had been assigned driving and protection duty for his father when Paulie Gatto, the Don\\'s usual bodyguard, had called in sick. Fredo proves to be ineffectual, fumbling with his gun and unable to shoot back. When Sonny hears about the Don being shot and Paulie\\'s absence, he orders Clemenza (Richard S. Castellano) to find Paulie and bring him to the Don\\'s house.Sollozzo abducts Tom Hagen and persuades him to offer Sonny the deal previously offered to his father. Enraged, Sonny refuses to consider it and issues an ultimatum to the Tattaglias: turn over Sollozzo or face a lengthy, bloody and costly (for both sides) gang war. They refuse, and instead send Sonny "a Sicilian message," in the form of two fresh fish wrapped in Luca Brasi\\'s bullet-proof vest, to tell the Corleones that Luca Brasi "sleeps with the fishes."Clemenza later takes Paulie and one of the family\\'s hitmen, Rocco Lampone, for a drive into Manhattan. Sonny wants to "go to the mattresses" -- set up beds in apartments for Corleone button men to operate out of in the event that the crime war breaks out. On their way back from Manhattan, Clemenza has Paulie stop the car in a remote area so he can urinate. Rocco shoots Paulie dead; he and Clemenza leave Paulie and the car behind.Michael, whom the other Mafia families consider a "civilian" uninvolved in mob business, visits his father at a small private hospital. He is shocked to find that no one is guarding him. Realizing that his father is again being set up to be killed, he calls Sonny for help, moves his father to another room, and goes outside to watch the entrance. Michael enlists help from Enzo the baker (Gabriele Torrei), who has come to the hospital to pay his respects. Together, they bluff away Sollozzo\\'s men as they drive by. Police cars soon appear bringing the corrupt Captain McCluskey (Sterling Hayden), who viciously punches Michael in the cheek and breaks his jaw when Michael insinuates that Sollozzo paid McCluskey to set up his father. Just then, Hagen arrives with "private detectives" licensed to carry guns to protect Don Corleone, and he takes the injured Michael home. Sonny responds by having Bruno Tattaglia (Tony Giorgio), the eldest son and underboss of Don Phillip Tattaglia (Victor Rendina), killed (off-camera).Following the attempt on the Don\\'s life at the hospital, Sollozzo requests a meeting with the Corleones, which Captain McCluskey will attend as Sollozzo\\'s bodyguard. When Michael volunteers to kill both men during the meeting, Sonny and the other senior Family members are amused; however, Michael convinces them that he is serious and that killing Sollozzo and McCluskey is in the family\\'s interest: "It\\'s not personal. It\\'s strictly business." Because Michael is considered a civilian, he won\\'t be regarded as a suspicious ambassador for the Corleones. Although police officers are usually off limits for hits, Michael argues that since McCluskey is corrupt and has illegal dealings with Sollozzo, he is fair game. Michael also implies that newspaper reporters that the Corleones have on their payroll would delight in publishing stories about a corrupt police captain.Michael meets with Clemenza, one of his father\\'s caporegimes (captains), who prepares a small pistol for him, covering the trigger and grip with tape to prevent any fingerprint evidence. He instructs Michael about the proper way to perform the assassination and tells him to leave the gun behind. He also tells Michael that the family were all very proud of Michael for becoming a war hero during his service in the Marines. Clemenza shows great confidence that Michael can perform the job and tells him it will all go smoothly. The plan is to have the Corleone\\'s informers find out the location of the meeting and plant the revolver before Michael, Sollozzo and McCluskey arrive.Before the meeting in a small Italian restaurant, McCluskey frisks Michael for weapons and finds him clean. Michael excuses himself to go to the bathroom, where he retrieves the planted revolver. Returning to the table, he fatally shoots Sollozzo, then McCluskey. Michael is sent to hide in Sicily while the Corleone family prepares for all-out warfare with the Five Families (who are united against the Corleones) as well as a general clampdown on the mob by the police and government authorities. When the don returns home from the hospital, he is distraught to learn that it was Michael who killed Sollozzo and McCluskey.Meanwhile, Connie and Carlo\\'s marriage is disintegrating. They argue publicly over Carlo\\'s suspected infidelity and his possessive behavior toward Connie. By Italian tradition, nobody, not even a high-ranking Mafia don, can intervene in a married couple\\'s personal disputes, even if they involve infidelity, money, or domestic abuse. One day, Sonny sees a bruise on Connie\\'s face and she tells him that Carlo hit her after she asked him if he was having an affair. Sonny tracks down and severely beats up Carlo Rizzi in the middle of a crowded street for brutalizing the pregnant Connie, and threatens to kill Carlo if he ever abuses Connie again. An angry Carlo responds by plotting with Tattaglia and Don Emilio Barzini (Richard Conte), the Corleones\\' chief rivals, to have Sonny killed.Later, Carlo has one of his mistresses phone his house, knowing that Connie will answer. The woman asks Connie to tell Carlo not to meet her tonight. The very pregnant and distraught Connie assaults Carlo; he takes advantage of the altercation to beat Connie in order to lure Sonny out in the open and away from the Corleone compound. When Connie phones the compound to tell Sonny that Carlo has beaten her again, the furious Sonny drives off (alone and unescorted) to fulfill his threat against Carlo. On the way to Connie and Carlo\\'s house, Sonny is ambushed at a toll booth on the Long Island Causeway and violently shot to death by several carloads of hitmen wielding Thompson sub-machine guns.Tom Hagen relays the news of Sonny\\'s massacre to the Don, who calls in the favor from Bonasera to personally handle the embalming of Sonny\\'s body. Rather than seek revenge for Sonny\\'s killing, Don Corleone meets with the heads of the Five Families to negotiate a cease-fire. Not only is the conflict draining all their assets and threatening their survival, but ending it is the only way that Michael can return home safely. Reversing his previous decision, Vito agrees that the Corleone family will provide political protection for Tattaglia\\'s traffic in heroin, as long as it is controlled and not sold to children. At the meeting, Don Corleone deduces that Don Barzini, not Tattaglia, was ultimately behind the start of the mob war and Sonny\\'s death.In Sicily, Michael patiently waits out his exile, protected by Don Tommasino (Corrado Gaipa), an old family friend. Michael aimlessly wanders the countryside, accompanied by his ever-present bodyguards, Calo (Franco Citti) and Fabrizio (Angelo Infanti). In a small village, Michael meets and falls in love with Apollonia Vitelli (Simonetta Stefanelli), the beautiful young daughter of a bar owner. They court and marry in the traditional Sicilian fashion, but soon Michael\\'s presence becomes known to Corleone enemies. As the couple is about to be moved to a safer location, Apollonia is killed as a result of a rigged car (originally intended for Michael), exploding on ignition; Michael, who watched the car blow up, spots Fabrizio hurriedly leaving the grounds seconds before the explosion, implicating him in the assassination plot. (In a deleted scene, Fabrizio is found years later and killed.)With his safety guaranteed, Michael returns home. More than a year later, in 1950, he reunites with his former girlfriend Kay after a total of four years of separation -- three in Italy and one in America. He tells her he wants them to be married. Although Kay is hurt that he waited so long to contact her, she accepts his proposal. With Don Vito semi-retired, Sonny dead, and middle brother Fredo considered incapable of running the family business, Michael is now in charge; he promises Kay he will make the family business completely legitimate within five years.Two years later, Clemenza and Salvatore Tessio (Abe Vigoda), complain that they are being pushed around by the Barzini Family and ask permission to strike back, but Michael denies the request. He plans to move the family operations to Nevada and after that, Clemenza and Tessio may break away to form their own families. Michael further promises Connie\\'s husband, Carlo, that he will be his right hand man in Nevada (Carlo had grown up there), unaware of his part in Sonny\\'s assassination. Tom Hagen has been removed as consigliere and is now merely the family\\'s lawyer, with Vito serving as consigliere. Privately, Hagen inquires about his change in status, and also questions Michael about a new regime of "soldiers" secretly being built under Rocco Lampone (Tom Rosqui). Don Vito explains to Hagen that Michael is acting on his advice.Another year or so later, Michael travels to Las Vegas and meets with Moe Greene (Alex Rocco), a rich and shrewd casino boss looking to expand his business dealings. After the Don\\'s attempted assassination, Fredo had been sent to Las Vegas to learn about the casino business from Greene. Michael arrogantly offers to buy out Greene but is rudely rebuffed. Greene believes the Corleones are weak and that he can secure a better deal from Barzini. As Moe and Michael heatedly negotiate, Fredo sides with Moe. Afterward, Michael warns Fredo to never again "take sides with anyone against the family."Michael returns home. In a private moment, Vito explains his expectation that the Family\\'s enemies will attempt to murder Michael by using a trusted associate to arrange a meeting as a pretext for assassination. Vito also reveals that he had never really intended a life of crime for Michael, hoping that his youngest son would hold legitimate power as a senator or governor. Some months later, Vito collapses and dies while playing with his young grandson Anthony (Anthony Gounaris) in his tomato garden. At the burial, Tessio conveys a proposal for a meeting with Barzini, which identifies Tessio as the traitor that Vito was expecting.Michael arranges for a series of murders to occur simultaneously while he is standing godfather to Connie\\'s and Carlo\\'s newborn son at the church:Don Stracci (Don Costello) is gunned down along with his bodyguard in a hotel elevator by a shotgun-wielding Clemenza.Moe Greene is killed while having a massage, shot through the eye by an unidentified assassin.Don Cuneo (Rudy Bond) is trapped in a revolving door at the St. Regis Hotel and shot dead by soldier Willi Cicci (Joe Spinell).Don Tattaglia is assassinated in his bed, along with a prostitute, by Rocco Lampone and an unknown associate.Don Barzini is killed on the steps of his office building along with his bodyguard and driver, shot by Al Neri (Richard Bright), disguised in his old police uniform.After the baptism, Tessio believes he and Hagen are on their way to the meeting between Michael and Barzini that he has arranged. Instead, he is surrounded by Willi Cicci and other button men as Hagen steps away. Realizing that Michael has uncovered his betrayal, Tessio tells Hagen that he always respected Michael, and that his disloyalty "was only business." He asks if Tom can get him off for "old times\\' sake," but Tom says he cannot. Tessio is driven away and never seen again (it is implied that Cicci shoots and kills Tessio with his own gun after he disarms him prior to entering the car).Meanwhile, Michael confronts Carlo about Sonny\\'s murder and forces him to admit his role in setting up the ambush, having been approached by Barzini himself. (The hitmen who killed Sonny were the core members of Barzini\\'s personal bodyguard.) Michael assures Carlo he will not be killed, but his punishment is exclusion from all family business. He hands Carlo a plane ticket to exile in Las Vegas. However, when Carlo gets into a car headed for the airport, he is immediately garroted to death by Clemenza, on Michael\\'s orders.Later, a hysterical Connie confronts Michael at the Corleone compound as movers carry away the furniture in preparation for the family move to Nevada. She accuses him of murdering Carlo in retribution for Carlo\\'s brutal treatment of her and for Carlo\\'s suspected involvement in Sonny\\'s murder. After Connie is removed from the house, Kay questions Michael about Connie\\'s accusation, but he refuses to answer, reminding her to never ask him about his business or what he does for a living. She insists, and Michael outright lies, reassuring his wife that he played no role in Carlo\\'s death. Kay believes him and is relieved. The film ends with Clemenza and new caporegimes Rocco Lampone and Al Neri arriving and paying their respects to Michael. Clemenza kisses Michael\\'s hand and greets him as "Don Corleone." As Kay watches, the office door is closed.']\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs2 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf13 \cb5 \strokec13 type\cf3 \strokec3 (\cf8 \strokec8 lines\cf3 \strokec3 )\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[34]: \cf12 \strokec12 pyspark.rdd.RDD\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 Extract All Words from the Document\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 words\cf3 \strokec3  \cf8 \strokec8 =\cf3 \strokec3  \cf8 \strokec8 lines\cf3 \strokec3 .\cf8 \strokec8 flatMap\cf3 \strokec3 (
+\f4\b \cf14 \strokec14 lambda
+\f3\b0 \cf3 \strokec3  \cf8 \strokec8 line\cf3 \strokec3 : \cf8 \strokec8 line\cf3 \strokec3 .\cf8 \strokec8 split\cf3 \strokec3 (\cf9 \strokec9 " "\cf3 \strokec3 )).\cf8 \strokec8 cache\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \cb1 \strokec12 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf9 \cb5 \strokec9 "i love coding"\cf3 \strokec3 .\cf8 \strokec8 split\cf3 \strokec3 (\cf9 \strokec9 " "\cf3 \strokec3 )\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[41]: \cf12 \strokec12 ['i', 'love', 'coding']\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 words\cf3 \strokec3 .\cf8 \strokec8 count\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[16]: \cf12 \strokec12 146038\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 Word counts with RDD\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsFiltered\cf3 \strokec3  \cf8 \strokec8 =\cf3 \strokec3  \cf8 \strokec8 words\cf3 \strokec3 .\cf8 \strokec8 filter\cf3 \strokec3 (
+\f4\b \cf14 \strokec14 lambda
+\f3\b0 \cf3 \strokec3  \cf8 \strokec8 w\cf3 \strokec3 : \cf13 \strokec13 len\cf3 \strokec3 (\cf8 \strokec8 w\cf3 \strokec3 ) \cf8 \strokec8 >\cf3 \strokec3  \cf10 \strokec10 0\cf3 \strokec3 )\
+\cf8 \strokec8 wordCounts\cf3 \strokec3  \cf8 \strokec8 =\cf3 \strokec3  \cf8 \strokec8 wordsFiltered\cf3 \strokec3 .\cf8 \strokec8 map\cf3 \strokec3 (
+\f4\b \cf14 \strokec14 lambda
+\f3\b0 \cf3 \strokec3  \cf8 \strokec8 word\cf3 \strokec3 : (\cf8 \strokec8 word\cf3 \strokec3 , \cf10 \strokec10 1\cf3 \strokec3 )).\cf8 \strokec8 reduceByKey\cf3 \strokec3 (
+\f4\b \cf14 \strokec14 lambda
+\f3\b0 \cf3 \strokec3  \cf8 \strokec8 a\cf3 \strokec3 ,\cf8 \strokec8 b\cf3 \strokec3 : \cf8 \strokec8 a+b\cf3 \strokec3 ).\cf8 \strokec8 cache\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \cb1 \strokec12 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordCounts\cf3 \strokec3 .\cf8 \strokec8 collect\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[51]: \cf12 \strokec12 \
+[(u'Slater,', 1),\
+ (u'middleman', 1),\
+ (u'border."', 1),\
+ (u'foul', 3),\
+ (u'four', 19),\
+ (u'peaceful,', 2),\
+ (u'die).', 1),\
+ (u"friend's", 2),\
+ (u'Wolfit),', 1),\
+ (u'comically', 1),\
+ (u'increase', 1),\
+ (u'Itzak', 1),\
+ (u'inheritance,', 1),\
+ (u'inheritance.', 2),\
+ (u'snowing', 1),\
+ (u'12-year-old', 1),\
+ (u'"J.J."', 1),\
+ (u"Sollozzo's", 4),\
+ (u'Les,', 3),\
+ (u'Pretty").', 1),\
+ (u'innocence,', 1),\
+ (u'innocence.', 1),\
+ (u'sinking', 4),\
+ (u'Tennessee,', 1),\
+ (u'Tennessee.', 1),\
+ (u'wood,', 1),\
+ (u"Charnier's", 6),\
+ (u'"King', 1),\
+ (u'yellow', 8),\
+ (u'hibernating', 2),\
+ (u'Old', 7),\
+ (u'Redding', 1),\
+ (u'screaming', 14),\
+ (u'starships', 1),\
+ (u'Bernardo,', 4),\
+ (u'wooden', 4),\
+ (u'accusatory', 2),\
+ (u'ghoulish,', 1),\
+ (u'Martin).', 1),\
+ (u"couple's", 5),\
+ (u'Paul', 51),\
+ (u'"do', 1),\
+ (u'Sandy', 18),\
+ (u'non-violent', 2),\
+ (u'entertained', 1),\
+ (u'(except', 1),\
+ (u'"Mother."And', 1),\
+ (u'nigh', 1),\
+ (u'ass,"', 1),\
+ (u'Shocked', 2),\
+ (u'her;', 4),\
+ (u'shockwave', 1),\
+ (u'second', 32),\
+ (u'rival,', 1),\
+ (u'sailed', 1),\
+ (u'Tom"', 1),\
+ (u'Townsend', 12),\
+ (u'Kane,', 2),\
+ (u'Kane.', 1),\
+ (u'postpone', 1),\
+ (u'nature,', 1),\
+ (u'escaped!', 1),\
+ (u'sales.', 1),\
+ (u'Dorota.', 1),\
+ (u'"troubles"', 1),\
+ (u'Hamilton', 9),\
+ (u'Ring.In', 1),\
+ (u'College', 1),\
+ (u'hallucinating', 1),\
+ (u'("Jet', 1),\
+ (u'Presidential', 2),\
+ (u'spreads,', 1),\
+ (u'hero', 8),\
+ (u'Obi-Wan.No', 1),\
+ (u'it.Story', 1),\
+ (u'here', 7),\
+ (u'transformation.', 1),\
+ (u'Tenderly,', 1),\
+ (u'Lemmon)', 1),\
+ (u'glass,', 1),\
+ (u'glass"', 1),\
+ (u'gazing', 1),\
+ (u'them.Whomever', 1),\
+ (u'shock,', 3),\
+ (u'shock.', 3),\
+ (u'elaborate', 6),\
+ (u'Wikipedia)', 1),\
+ (u'reports', 10),\
+ (u'finger.', 1),\
+ (u'pressed,', 1),\
+ (u'pursuers.', 1),\
+ (u'"who', 1),\
+ (u'redeemed.', 1),\
+ (u'error.', 1),\
+ (u'criticism', 4),\
+ (u'Dexter', 3),\
+ (u'positions.', 3),\
+ (u'Recalling', 1),\
+ (u'brought', 22),\
+ (u'facility.Elaine', 1),\
+ (u'cops.', 5),\
+ (u'business.At', 1),\
+ (u'Basin', 1),\
+ (u'Security', 1),\
+ (u'unit', 18),\
+ (u'fame,', 1),\
+ (u'catchy', 1),\
+ (u'Earth.', 7),\
+ (u'Sergeant,', 1),\
+ (u'apologetic,', 1),\
+ (u'occupying', 1),\
+ (u'matter.Prewitt', 1),\
+ (u'upbringing,', 1),\
+ (u'music', 19),\
+ (u'card', 8),\
+ (u'passport', 3),\
+ (u'strike', 7),\
+ (u'sweltering', 1),\
+ (u'opponent,', 2),\
+ (u'exorcism', 3),\
+ (u'opponent.', 1),\
+ (u'females', 1),\
+ (u'holy', 2),\
+ (u'successful', 14),\
+ (u'ability,', 1),\
+ (u'menaced', 1),\
+ (u'midst', 6),\
+ (u'doppelgnger', 1),\
+ (u'(many', 1),\
+ (u'locked', 4),\
+ (u'uncountable,', 1),\
+ (u'pursue', 8),\
+ (u'14-year', 1),\
+ (u'supply.', 2),\
+ (u'desk.', 4),\
+ (u'Arwen', 2),\
+ (u'locker', 6),\
+ (u'Merl', 1),\
+ (u'plunger', 1),\
+ (u'Ark.)', 1),\
+ (u'caporegime', 1),\
+ (u'rocks.', 5),\
+ (u'Riff,', 1),\
+ (u'household', 4),\
+ (u'organized', 1),\
+ (u'show"', 1),\
+ (u'Holding', 1),\
+ (u'organizer', 1),\
+ (u'gargantuan', 1),\
+ (u'around.', 4),\
+ (u'1950s-themed', 1),\
+ (u'around,', 5),\
+ (u'complaining', 4),\
+ (u'strip,', 3),\
+ (u'travel', 13),\
+ (u'around"', 1),\
+ (u'cigarette,', 2),\
+ (u'Anita', 13),\
+ (u'machine', 23),\
+ (u'hot', 9),\
+ (u'win,', 1),\
+ (u'beholds', 1),\
+ (u'place', 33),\
+ (u'preferable', 1),\
+ (u'aide.', 1),\
+ (u'A', 97),\
+ (u'Bates', 9),\
+ (u'beauty', 4),\
+ (u'L.', 2),\
+ (u'Charlie.', 2),\
+ (u'Charlie,', 6),\
+ (u'pimps', 1),\
+ (u'wrong', 10),\
+ (u'destined', 1),\
+ (u'sentencing', 1),\
+ (u'Prowse;', 1),\
+ (u'promotion', 1),\
+ (u'types', 1),\
+ (u'effective', 2),\
+ (u'attracts', 7),\
+ (u'revolt', 2),\
+ (u'scoffs', 2),\
+ (u'bum!"', 1),\
+ (u'Another', 6),\
+ (u'airlock;', 1),\
+ (u'"To', 2),\
+ (u'Sheldrake', 12),\
+ (u'backdrop', 1),\
+ (u'sprawling', 1),\
+ (u'effect.', 1),\
+ (u'ambitions,', 1),\
+ (u'partnered', 1),\
+ (u'fingers.', 2),\
+ (u'stabbed', 3),\
+ (u'Partisan', 1),\
+ (u'lovingly', 2),\
+ (u'fit', 5),\
+ (u'bringing', 9),\
+ (u'Bonnie,', 1),\
+ (u'Hickman)', 2),\
+ (u"Gardner's", 2),\
+ (u'survivors', 4),\
+ (u'whiskey,', 2),\
+ (u'hidden', 25),\
+ (u'admirable', 1),\
+ (u'anxiety.', 1),\
+ (u'Bernardo.', 1),\
+ (u'Hickory', 1),\
+ (u'songwriter', 1),\
+ (u'strings,', 1),\
+ (u'Seth', 2),\
+ (u'commemorate', 3),\
+ (u'Rosie,', 1),\
+ (u'man-made', 1),\
+ (u'senator.', 1),\
+ (u'senator,', 1),\
+ (u'bankrupt.', 1),\
+ (u'dumps', 1),\
+ (u'train.Charnier', 1),\
+ (u'Glover),', 1),\
+ (u'interfering', 2),\
+ (u'Wales,', 1),\
+ (u'development', 2),\
+ (u'faints.', 1),\
+ (u'financial', 9),\
+ (u'Combing', 1),\
+ (u'McDermott)', 1),\
+ (u'Hopper', 4),\
+ (u'Eliza', 9),\
+ (u'McDormand)', 1),\
+ (u'Mongolia', 1),\
+ (u'comprises', 1),\
+ (u'exhume', 1),\
+ (u'ring', 13),\
+ (u'whip', 2),\
+ (u'millions).', 1),\
+ (u'Komarovsky', 8),\
+ (u'deactivated,', 1),\
+ (u'1970,', 1),\
+ (u'at,', 2),\
+ (u'excepting', 1),\
+ (u'accidents.', 1),\
+ (u'encourage', 2),\
+ (u'Rabbit', 1),\
+ (u'perturbed', 1),\
+ (u"mid-40's.", 1),\
+ (u'outburst', 2),\
+ (u'born:', 1),\
+ (u'(Fire),', 1),\
+ (u'(Thornhill)', 1),\
+ (u'threatened', 5),\
+ (u'given', 29),\
+ (u'Worn', 1),\
+ (u'What', 2),\
+ (u'colony', 2),\
+ (u'speeding,', 1),\
+ (u'sheet', 1),\
+ (u'looks,', 3),\
+ (u'rituals.', 1),\
+ (u'Zhivago,', 1),\
+ (u'enormous', 6),\
+ (u'Eventually,', 7),\
+ (u'are).', 1),\
+ (u'maimed.', 1),\
+ (u'viewing', 2),\
+ (u'ham-shaped', 1),\
+ (u'shipped', 2),\
+ (u'speedy', 1),\
+ (u'divorcing', 1),\
+ (u'Lancaster)', 1),\
+ (u'caught', 17),\
+ (u'speeds', 5),\
+ (u'(probably', 1),\
+ (u'Jacobi', 5),\
+ (u'collateral.', 1),\
+ (u'callous', 2),\
+ (u'Astin)', 1),\
+ (u"Dagol's", 1),\
+ (u'spinning', 5),\
+ (u'East.', 1),\
+ (u'me!', 1),\
+ (u'preverts"', 1),\
+ (u'"Action!";', 1),\
+ (u'Bancroft),', 1),\
+ (u'betrothed', 1),\
+ (u'tango', 1),\
+ (u'"final', 1),\
+ (u'master', 3),\
+ (u'bitter', 6),\
+ (u'sure.', 1),\
+ (u'Cutlass', 4),\
+ (u'Sure,', 1),\
+ (u'saucers.', 1),\
+ (u'mutilated', 2),\
+ (u'retained', 1),\
+ (u'diner.', 2),\
+ (u'crawl', 4),\
+ (u'fight.The', 1),\
+ (u'tires', 1),\
+ (u'trek', 2),\
+ (u'leg,', 1),\
+ (u'showed', 1),\
+ (u'coward', 3),\
+ (u'tree', 9),\
+ (u'likely', 13),\
+ (u'graveyard.Tuco', 1),\
+ (u'shower', 6),\
+ (u'idle', 1),\
+ (u'"Goodbye,', 1),\
+ (u'Angelo', 1),\
+ (u'dozes', 3),\
+ (u'longs', 2),\
+ (u'Kansas.Dorothy', 1),\
+ (u'keeper', 1),\
+ (u'upbraids', 1),\
+ (u'Angela', 7),\
+ (u'Suellen,', 1),\
+ (u"O'Shaughnessy,", 1),\
+ (u'teams.', 1),\
+ (u'transaction.', 1),\
+ (u'Williams', 2),\
+ (u'wholesome', 2),\
+ (u'mostly', 13),\
+ (u'supoena', 1),\
+ (u'fugitive,', 1),\
+ (u'drunk,', 5),\
+ (u'Manny', 1),\
+ (u'drunk.', 3),\
+ (u'aboard.', 1),\
+ (u'(ritual', 1),\
+ (u'instructs', 13),\
+ (u'They', 197),\
+ (u'$10,000', 4),\
+ (u'grips', 1),\
+ (u'agressive', 1),\
+ (u'"nearly', 1),\
+ (u'Bank', 1),\
+ (u'Jones', 6),\
+ (u'even', 74),\
+ (u'Bitterbuck,', 1),\
+ (u'thrilled', 5),\
+ (u'Bertie.', 1),\
+ (u'drug/weapons', 1),\
+ (u'believes,', 1),\
+ (u'believes.', 1),\
+ (u'mouth', 12),\
+ (u'letter', 16),\
+ (u'relieving', 1),\
+ (u'drought', 1),\
+ (u'Stefanelli),', 1),\
+ (u"Vader's.", 1),\
+ (u'$3000', 2),\
+ (u'singer', 9),\
+ (u'episode', 2),\
+ (u'blanks.', 1),\
+ (u'stare."', 1),\
+ (u'Clarissa', 1),\
+ (u'professor', 1),\
+ (u'Initially', 1),\
+ (u'return.In', 1),\
+ (u'(Haven)', 1),\
+ (u'1980,"', 1),\
+ (u'affair.', 6),\
+ (u'"Your', 2),\
+ (u'Kubelik', 12),\
+ (u'darkness.', 2),\
+ (u'Chrissie', 4),\
+ (u'bomb', 7),\
+ (u'Union', 16),\
+ (u'contributed', 1),\
+ (u'meetings', 1),\
+ (u'Class,', 1),\
+ (u'sexist', 1),\
+ (u'padded', 3),\
+ (u'occupation,', 1),\
+ (u'Skylar', 3),\
+ (u'retirement).', 1),\
+ (u'cannot.', 1),\
+ (u'there.Meanwhile,', 1),\
+ (u'tempted', 1),\
+ (u'junkyard', 1),\
+ (u'Congressional', 3),\
+ (u"Hal's", 4),\
+ (u'submit', 2),\
+ (u'ment', 1),\
+ (u'bust', 2),\
+ (u'rich', 15),\
+ (u'foolishly', 1),\
+ (u'Senator.', 2),\
+ (u'(Janet', 1),\
+ (u'questioned,', 1),\
+ (u'Stracci', 1),\
+ (u'MacFadyen),', 1),\
+ (u'psychiatric', 3),\
+ (u'pocket', 5),\
+ (u'caporegimes', 2),\
+ (u'lies,', 1),\
+ (u'(Simon', 2),\
+ (u'$10', 1),\
+ (u'diplomas.', 1),\
+ (u'memories:', 1),\
+ (u'telegram.', 1),\
+ (u'telegram,', 1),\
+ (u'groupie', 1),\
+ (u'dipping', 1),\
+ (u'Pentangeli,', 1),\
+ (u'men,', 22),\
+ (u'men.', 7),\
+ (u'bus.', 2),\
+ (u'reviving', 1),\
+ (u'bus,', 2),\
+ (u'release', 9),\
+ (u'boarded', 2),\
+ (u'cape,', 1),\
+ (u'respond', 2),\
+ (u'Linnea.', 1),\
+ (u'fair', 6),\
+ (u'peripheral', 1),\
+ (u'unexpectedly', 3),\
+ (u'Anderson', 1),\
+ (u'truncheon.', 1),\
+ (u'Saruman', 3),\
+ (u'fail', 5),\
+ (u'Abbandando)', 1),\
+ (u'best', 26),\
+ (u'information,', 1),\
+ (u"Szpilman's", 2),\
+ (u'Noble).', 1),\
+ (u'lots', 1),\
+ (u'conversations,', 1),\
+ (u'quest.', 2),\
+ (u'rings', 12),\
+ (u"Professor's", 1),\
+ (u'murky,', 1),\
+ (u'adventure.', 1),\
+ (u'adventure,', 2),\
+ (u'dustman,', 1),\
+ (u'trigger,', 1),\
+ (u'Eldarion', 1),\
+ (u'Advanced', 1),\
+ (u'preserve', 2),\
+ (u'letting', 10),\
+ (u'involved.', 3),\
+ (u'involved,', 2),\
+ (u'rolled', 1),\
+ (u'8:30.', 1),\
+ (u'there.Jillian', 1),\
+ (u'medallion', 1),\
+ (u'tribe.', 1),\
+ (u'dons', 1),\
+ (u'Cities,', 1),\
+ (u'do!"', 1),\
+ (u'pity', 2),\
+ (u'hiding.', 2),\
+ (u'cuffs', 1),\
+ (u'pits', 1),\
+ (u'108', 1),\
+ (u'demanded', 2),\
+ (u'day.Karras', 1),\
+ (u'erupted', 1),\
+ (u'iron', 2),\
+ (u'ambition,', 2),\
+ (u'lot!', 1),\
+ (u"Copperfield'", 1),\
+ (u'Embarassed,', 1),\
+ (u'25,', 1),\
+ (u'doubt.', 1),\
+ (u'money.', 24),\
+ (u'money,', 20),\
+ (u'unhealed', 1),\
+ (u'suspects."', 1),\
+ (u'TwoTom', 1),\
+ (u'individual.', 1),\
+ (u'pregnancy', 1),\
+ (u'blonde', 7),\
+ (u'Laszlo,', 4),\
+ (u'100', 1),\
+ (u'startles', 1),\
+ (u'advances,', 3),\
+ (u'union', 3),\
+ (u"Mac's", 4),\
+ (u'subside', 1),\
+ (u'Kristofferson', 1),\
+ (u'moon.Title:', 1),\
+ (u'privilege', 1),\
+ (u'follow.', 1),\
+ (u'capsized.', 1),\
+ (u'life', 84),\
+ (u'homeland', 1),\
+ (u'hospitalized', 1),\
+ (u'Poland', 4),\
+ (u'worker', 4),\
+ (u'needed,', 1),\
+ (u'befriending', 1),\
+ (u'hotels,', 1),\
+ (u'weaselly', 1),\
+ (u'beach;', 1),\
+ (u'Mandrake,', 1),\
+ (u'worked', 9),\
+ (u'spin', 1),\
+ (u'Holmes', 11),\
+ (u'Elgin', 1),\
+ (u'Benedicto', 1),\
+ (u'Odbody,', 1),\
+ (u'self-propelled', 1),\
+ (u'fall.', 2),\
+ (u'employ', 1),\
+ (u'symbolically', 1),\
+ (u'hates', 4),\
+ (u'SituationThree', 1),\
+ (u'Campbell', 2),\
+ (u'kidnapper.', 1),\
+ (u'kids?"', 1),\
+ (u'flooding', 1),\
+ (u'outdrink', 1),\
+ (u'Roy,', 3),\
+ (u'remembering', 4),\
+ (u'Scottie', 53),\
+ (u"unit's", 1),\
+ (u'Polanski),', 1),\
+ (u'3PO,', 1),\
+ (u'Korova', 2),\
+ (u'"George', 1),\
+ (u'said,', 2),\
+ (u'trusted', 3),\
+ (u'memorial', 1),\
+ (u'uninjured,', 1),\
+ (u'pry', 2),\
+ (u'pieces.', 2),\
+ (u'300', 2),\
+ (u'visitations', 1),\
+ (u'Allenby', 5),\
+ (u'couple', 21),\
+ (u'templates', 1),\
+ (u'snorting', 1),\
+ (u'(due', 2),\
+ (u'effortlessly', 1),\
+ (u'transfixed', 1),\
+ (u'marches', 6),\
+ (u'typhoid', 1),\
+ (u'arrest.', 1),\
+ (u'torpedoes', 4),\
+ (u'routines.', 1),\
+ (u'Angeles', 6),\
+ (u'featherweight', 1),\
+ (u'Benedicts', 2),\
+ (u'Parker),', 1),\
+ (u"Eyes'", 1),\
+ (u'Rangers.', 1),\
+ (u'intrusion', 1),\
+ (u"Gittes'", 1),\
+ (u'Rocky,', 8),\
+ (u'helplessness,', 1),\
+ (u'suffering', 8),\
+ (u'Gavin', 12),\
+ (u'thing.', 1),\
+ (u'thing,', 1),\
+ (u'corporate', 1),\
+ (u'veteran', 1),\
+ (u'place.Then', 1),\
+ (u'sleeps', 1),\
+ (u'[accidental]', 1),\
+ (u'Hindu,', 1),\
+ (u'beset', 2),\
+ (u'Angered,', 2),\
+ (u'plight', 1),\
+ (u'Russian-American', 1),\
+ (u'sandcrawler,', 1),\
+ (u'(Harvey', 2),\
+ (u'campaign', 6),\
+ (u'out-of-town', 1),\
+ (u'salutes', 1),\
+ (u'ease', 3),\
+ (u'had', 240),\
+ (u'exploits', 2),\
+ (u'Lord"', 1),\
+ (u'obedient', 1),\
+ (u'innocent', 4),\
+ (u'complex,', 1),\
+ (u'Savident)', 1),\
+ (u'hat', 3),\
+ (u'not.On', 1),\
+ (u'casually', 6),\
+ (u'sovereign,', 1),\
+ (u'disagreement', 1),\
+ (u'vehicles.', 1),\
+ (u'Maltese', 1),\
+ (u'grey,', 1),\
+ (u'birth', 4),\
+ (u'1964.-Terry', 1),\
+ (u'crown.Two', 1),\
+ (u'shadow', 3),\
+ (u'vigilante', 1),\
+ (u'opinion,', 1),\
+ (u'desire', 5),\
+ (u'war.', 10),\
+ (u'Honour,', 1),\
+ (u'new-found', 1),\
+ (u'Lowry', 1),\
+ (u'Behind', 1),\
+ (u'gangplank', 2),\
+ (u'Raquel', 1),\
+ (u'misled', 1),\
+ (u'steps', 27),\
+ (u'(often', 1),\
+ (u'shot.Back', 1),\
+ (u'trip,', 3),\
+ (u'Sueleen', 6),\
+ (u'Swedish', 1),\
+ (u'Taylor),', 2),\
+ (u'attorney', 4),\
+ (u'casket,', 1),\
+ (u'crowd', 18),\
+ (u'Travis.', 1),\
+ (u'cheeks.', 1),\
+ (u'Travis,', 1),\
+ (u"Jeffries'", 2),\
+ (u'1880.The', 1),\
+ (u'"There', 2),\
+ (u'billboard', 1),\
+ (u'Norton', 13),\
+ (u'Jake,', 1),\
+ (u'shake.', 1),\
+ (u'homestead,', 1),\
+ (u'for', 1096),\
+ (u'contributing', 1),\
+ (u'disheartened', 2),\
+ (u'exposition', 1),\
+ (u'summoned', 1),\
+ (u'spaceship,', 1),\
+ (u"Pippin's", 2),\
+ (u'Later,', 16),\
+ (u'garden).', 1),\
+ (u'mate,', 1),\
+ (u'Nicholson', 18),\
+ (u'died.In', 1),\
+ (u'suits,', 1),\
+ (u'defensive', 4),\
+ (u'losing', 12),\
+ (u'bowing', 1),\
+ (u'chain-link', 1),\
+ (u'Lochlan', 3),\
+ (u'derailed', 1),\
+ (u'dollars', 7),\
+ (u'Susan,', 1),\
+ (u'repellent', 1),\
+ (u'suggestions', 1),\
+ (u'faded,', 1),\
+ (u'Fed', 1),\
+ (u'statements', 1),\
+ (u'barks', 1),\
+ (u'"Plan', 1),\
+ (u'Scotland', 6),\
+ (u'Thugs', 1),\
+ (u'administer', 1),\
+ (u'beings', 3),\
+ (u'sow', 1),\
+ (u'spores', 2),\
+ (u'shoots', 53),\
+ (u'due.', 1),\
+ (u'due,', 1),\
+ (u'(Dabbs', 1),\
+ (u'fields.', 2),\
+ (u'Gulf', 1),\
+ (u'support', 13),\
+ (u'1976.', 1),\
+ (u'fingertips.', 1),\
+ (u'one-time', 2),\
+ (u'senate', 1),\
+ (u'disappeared).The', 1),\
+ (u'despises', 3),\
+ (u"Harbin's", 1),\
+ (u'Device', 2),\
+ (u'dismisses.', 1),\
+ (u'pals', 1),\
+ (u'launching', 3),\
+ (u'Vespa', 2),\
+ (u'them.Marge', 1),\
+ (u'fascination', 1),\
+ (u'$200', 1),\
+ (u'Harbin', 3),\
+ (u'hot-tempered', 2),\
+ (u'movie:', 2),\
+ (u'talents', 1),\
+ (u'kidnapped.', 1),\
+ (u'winter,', 2),\
+ (u'"Most', 1),\
+ (u'Black)', 1),\
+ (u'away.That', 1),\
+ (u'hall.', 3),\
+ (u'Brad,', 1),\
+ (u'hall,', 3),\
+ (u'inside', 34),\
+ (u'virtue,', 1),\
+ (u'devices', 1),\
+ (u'County', 1),\
+ (u'discarding', 1),\
+ (u'Tony', 35),\
+ (u'Andy', 57),\
+ (u'wait.', 3),\
+ (u'Lerner', 1),\
+ (u'II.Mozart', 1),\
+ (u'juvenile', 1),\
+ (u'proved', 3),\
+ (u'interpreter,', 3),\
+ (u'disperse.As', 1),\
+ (u'higher.', 1),\
+ (u'film.)Francis', 1),\
+ (u'Sig', 2),\
+ (u'sprint', 1),\
+ (u"Paul's", 7),\
+ (u'relay', 1),\
+ (u'eventual', 1),\
+ (u'Philadelphia,', 1),\
+ (u'AM', 2),\
+ (u'actor', 1),\
+ (u'Lacombe', 2),\
+ (u'role', 10),\
+ (u'ambitious', 1),\
+ (u'Tracy', 10),\
+ (u'smell', 3),\
+ (u"'s", 1),\
+ (u'Ocean.', 2),\
+ (u'(Mel', 1),\
+ (u'outcropping,', 1),\
+ (u'prove.', 1),\
+ (u'repeats,', 1),\
+ (u'intent', 4),\
+ (u"'a", 1),\
+ (u'senior', 7),\
+ (u'swimmers.', 1),\
+ (u'lunge', 1),\
+ (u'Fambrough', 2),\
+ (u"workers'", 1),\
+ (u'confused,', 1),\
+ (u'family."Michael', 1),\
+ (u"O'Hara", 2),\
+ (u'push', 4),\
+ (u'Empire', 5),\
+ (u'dotes', 1),\
+ (u'mistresses', 1),\
+ (u'posed', 1),\
+ (u'too.Wandering', 1),\
+ (u'chain', 2),\
+ (u'stay,', 4),\
+ (u'Mordente)', 1),\
+ (u'alcoholic,', 3),\
+ (u"film's", 5),\
+ (u'umbrage', 1),\
+ (u'theaters', 1),\
+ (u'bandits', 3),\
+ (u'chair', 4),\
+ (u'hole', 7),\
+ (u'quartered', 1),\
+ (u'injection.In', 1),\
+ (u'Sinatra).', 1),\
+ (u'aviator.', 1),\
+ (u'annoying,', 1),\
+ (u'freelance', 2),\
+ (u'refuse."', 1),\
+ (u'(Rand', 1),\
+ (u'crates', 5),\
+ (u"Weinstock's", 1),\
+ (u'plainclothes', 1),\
+ (u'bicycles', 1),\
+ (u'"Roma', 1),\
+ (u'veterans', 1),\
+ (u'tenacious', 1),\
+ (u'jerk', 1),\
+ (u'buddy.', 1),\
+ (u'cheap', 3),\
+ (u'buddy,', 1),\
+ (u'By,', 1),\
+ (u'Indian,', 1),\
+ (u'half-track.', 1),\
+ (u'spats', 1),\
+ (u'cajoles', 1),\
+ (u'fullest', 1),\
+ (u'child,', 6),\
+ (u'child.', 7),\
+ (u'gate,', 2),\
+ (u'femur', 1),\
+ (u'Dugan', 6),\
+ (u'1305,', 1),\
+ (u'solves', 2),\
+ (u'Marseilles,', 1),\
+ (u'heart.', 1),\
+ (u'leave', 94),\
+ (u'"Dorothy"', 1),\
+ (u'stockade', 3),\
+ (u'inscribed', 1),\
+ (u'loads', 2),\
+ (u'unaware', 13),\
+ (u'spiritual', 2),\
+ (u'findings', 1),\
+ (u'attic', 2),\
+ (u'somber', 2),\
+ (u'downriver.', 1),\
+ (u'soft-spoken', 2),\
+ (u'heavyweight', 3),\
+ (u'"Help', 1),\
+ (u'ogled', 1),\
+ (u'educate', 1),\
+ (u'murder.', 9),\
+ (u'lavishness', 1),\
+ (u'respects.', 1),\
+ (u'situaiton.', 1),\
+ (u'reminiscent', 1),\
+ (u'wayward', 1),\
+ (u'respects,', 1),\
+ (u'falling', 10),\
+ (u'boost', 1),\
+ (u'presence.', 2),\
+ (u'apartments,', 1),\
+ (u'jury', 8),\
+ (u'climbs', 15),\
+ (u'funeral', 6),\
+ (u'film)The', 1),\
+ (u'Europe;', 1),\
+ (u'trail.', 2),\
+ (u'yards', 3),\
+ (u'Osgood,', 1),\
+ (u'sandwiches,', 1),\
+ (u'My', 1),\
+ (u'1307),', 1),\
+ (u"Stanton's", 1),\
+ (u'Sessions,', 2),\
+ (u'Easy,"', 1),\
+ (u'Mmakil,', 1),\
+ (u'Mmakil.', 1),\
+ (u'(Hugo', 1),\
+ (u'Joan",', 1),\
+ (u'Paloma,"', 1),\
+ (u'chanting', 2),\
+ (u'Lee).', 1),\
+ (u'studies', 1),\
+ (u'reclaim', 1),\
+ (u'REAL', 1),\
+ (u'love', 71),\
+ (u'hostages', 1),\
+ (u'prefer', 2),\
+ (u'transom.', 1),\
+ (u'stomps', 1),\
+ (u'Enough', 1),\
+ (u'betraying', 1),\
+ (u'public,', 1),\
+ (u'"retribution"', 1),\
+ (u'rises,', 1),\
+ (u'undergone', 1),\
+ (u'(causing', 1),\
+ (u'working', 32),\
+ (u'life,"', 1),\
+ (u'angry', 22),\
+ (u'ensues,', 4),\
+ (u'tightly', 3),\
+ (u'believe,', 1),\
+ (u"Kayo's", 2),\
+ (u'wondering', 3),\
+ (u'films', 2),\
+ (u'volunteers,', 1),\
+ (u'Those', 1),\
+ (u'scratched', 1),\
+ (u'afford', 3),\
+ (u'pre-flight', 1),\
+ (u'non-family', 1),\
+ (u'consoles', 1),\
+ (u'everywhere', 1),\
+ (u'POW,', 2),\
+ (u'blood.', 1),\
+ (u'Horne),', 1),\
+ (u'task.', 1),\
+ (u'involve', 1),\
+ (u'anything', 20),\
+ (u'originally', 2),\
+ (u'abortion', 2),\
+ (u'incites', 2),\
+ (u'believed', 9),\
+ (u'renew', 1),\
+ (u'detached', 1),\
+ (u'Johnny.At', 1),\
+ (u'understanding.Pulling', 1),\
+ (u'want', 40),\
+ (u'Federal', 2),\
+ (u'parachute', 1),\
+ (u'heard.', 1),\
+ (u'hides', 8),\
+ (u'Trent)', 1),\
+ (u'stole', 4),\
+ (u'monitoring', 2),\
+ (u'savor', 1),\
+ (u'advancing', 1),\
+ (u'Stadler)', 2),\
+ (u'listen,', 1),\
+ (u'overhears.)Clues', 1),\
+ (u'listen.', 3),\
+ (u'laundry', 1),\
+ (u'fleeting."', 1),\
+ (u'6\\'5"', 1),\
+ (u'begging', 3),\
+ (u'blasting', 2),\
+ (u'spot', 7),\
+ (u'Dorothy', 63),\
+ (u'Murron.Following', 1),\
+ (u'date', 16),\
+ (u'mirror.', 3),\
+ (u'data', 2),\
+ (u'there?"', 1),\
+ (u'"Southwest', 4),\
+ (u'stress', 1),\
+ (u'natural', 2),\
+ (u'unmuddied', 1),\
+ (u'sectors', 1),\
+ (u'servants/slaves', 1),\
+ (u'Cisco', 1),\
+ (u'darkened', 2),\
+ (u'so', 148),\
+ (u'coyote,', 1),\
+ (u'skirmish', 3),\
+ (u'pulled', 20),\
+ (u'drunken', 8),\
+ (u'1930s,', 1),\
+ (u'cigarette.', 1),\
+ (u"Stan's", 1),\
+ (u'record,', 1),\
+ (u'Gardner', 2),\
+ (u'Jimmy,', 2),\
+ (u'Oaks', 1),\
+ (u'tendency', 2),\
+ (u'dead;', 4),\
+ (u'Harry.We', 1),\
+ (u'limbs', 1),\
+ (u'disconnect', 1),\
+ (u'paraded', 1),\
+ (u'troubles', 1),\
+ (u'suspicion', 1),\
+ (u"Ryan's", 5),\
+ (u'did?', 1),\
+ (u"dead'", 1),\
+ (u'abusive', 2),\
+ (u'petition', 2),\
+ (u'hop', 1),\
+ (u'thereby', 1),\
+ (u'3', 7),\
+ (u"'O'", 1),\
+ (u'experiment.', 1),\
+ (u'year,', 3),\
+ (u'stickup', 1),\
+ (u'year.', 1),\
+ (u"(There's", 1),\
+ (u'invading', 1),\
+ (u'24', 3),\
+ (u'arriving', 8),\
+ (u'Poliakoff', 2),\
+ (u'Kay', 11),\
+ (u'maintaining', 1),\
+ (u'parade.', 1),\
+ (u'Anybodys,', 1),\
+ (u'could.His', 1),\
+ (u'workforce,', 1),\
+ (u'Yellow', 1),\
+ (u'next,', 1),\
+ (u'privately,', 1),\
+ (u'fisherman', 3),\
+ (u"talkie[2]).Don's", 1),\
+ (u'rundown', 1),\
+ (u'Carletons', 1),\
+ (u'freed.Weeks', 1),\
+ (u"nurse's", 1),\
+ (u'repaired', 1),\
+ (u'(De', 1),\
+ (u'Communists', 1),\
+ (u'Charlie"', 1),\
+ (u'(Ona', 1),\
+ (u'quit,', 1),\
+ (u'scenes.)', 1),\
+ (u'beloved', 4),\
+ (u'disintegrate.', 1),\
+ (u'(Gary', 2),\
+ (u"Lola's", 3),\
+ (u'fainted', 1),\
+ (u'entering', 5),\
+ (u'prostitute,', 3),\
+ (u'cabbie', 1),\
+ (u'omens,', 1),\
+ (u'superior,', 1),\
+ (u'Owen,', 1),\
+ (u'brags', 1),\
+ (u'bass.', 1),\
+ (u'Michigan', 1),\
+ (u'disguise.', 1),\
+ (u'disguise,', 6),\
+ (u'seriously', 6),\
+ (u'(Maria', 2),\
+ (u'Rushmore,', 1),\
+ (u'suggesting', 3),\
+ (u'Jon', 1),\
+ (u'disaster.', 2),\
+ (u'guardsmen,', 1),\
+ (u'rival.As', 1),\
+ (u'siege', 2),\
+ ...]\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs2 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsFiltered\cf3 \strokec3 .\cf8 \strokec8 map\cf3 \strokec3 (
+\f4\b \cf14 \strokec14 lambda
+\f3\b0 \cf3 \strokec3  \cf8 \strokec8 word\cf3 \strokec3 : (\cf8 \strokec8 word\cf3 \strokec3 , \cf10 \strokec10 1\cf3 \strokec3 )).\cf8 \strokec8 collect\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[45]: \cf12 \strokec12 \
+[(u'In', 1),\
+ (u'late', 1),\
+ (u'summer', 1),\
+ (u'1945,', 1),\
+ (u'guests', 1),\
+ (u'are', 1),\
+ (u'gathered', 1),\
+ (u'for', 1),\
+ (u'the', 1),\
+ (u'wedding', 1),\
+ (u'reception', 1),\
+ (u'of', 1),\
+ (u'Don', 1),\
+ (u'Vito', 1),\
+ (u"Corleone's", 1),\
+ (u'daughter', 1),\
+ (u'Connie', 1),\
+ (u'(Talia', 1),\
+ (u'Shire)', 1),\
+ (u'and', 1),\
+ (u'Carlo', 1),\
+ (u'Rizzi', 1),\
+ (u'(Gianni', 1),\
+ (u'Russo).', 1),\
+ (u'Vito', 1),\
+ (u'(Marlon', 1),\
+ (u'Brando),', 1),\
+ (u'the', 1),\
+ (u'head', 1),\
+ (u'of', 1),\
+ (u'the', 1),\
+ (u'Corleone', 1),\
+ (u'Mafia', 1),\
+ (u'family,', 1),\
+ (u'is', 1),\
+ (u'known', 1),\
+ (u'to', 1),\
+ (u'friends', 1),\
+ (u'and', 1),\
+ (u'associates', 1),\
+ (u'as', 1),\
+ (u'"Godfather."', 1),\
+ (u'He', 1),\
+ (u'and', 1),\
+ (u'Tom', 1),\
+ (u'Hagen', 1),\
+ (u'(Robert', 1),\
+ (u'Duvall),', 1),\
+ (u'the', 1),\
+ (u'Corleone', 1),\
+ (u'family', 1),\
+ (u'lawyer,', 1),\
+ (u'are', 1),\
+ (u'hearing', 1),\
+ (u'requests', 1),\
+ (u'for', 1),\
+ (u'favors', 1),\
+ (u'because,', 1),\
+ (u'according', 1),\
+ (u'to', 1),\
+ (u'Italian', 1),\
+ (u'tradition,', 1),\
+ (u'"no', 1),\
+ (u'Sicilian', 1),\
+ (u'can', 1),\
+ (u'refuse', 1),\
+ (u'a', 1),\
+ (u'request', 1),\
+ (u'on', 1),\
+ (u'his', 1),\
+ (u"daughter's", 1),\
+ (u'wedding', 1),\
+ (u'day."', 1),\
+ (u'One', 1),\
+ (u'of', 1),\
+ (u'the', 1),\
+ (u'men', 1),\
+ (u'who', 1),\
+ (u'asks', 1),\
+ (u'the', 1),\
+ (u'Don', 1),\
+ (u'for', 1),\
+ (u'a', 1),\
+ (u'favor', 1),\
+ (u'is', 1),\
+ (u'Amerigo', 1),\
+ (u'Bonasera,', 1),\
+ (u'a', 1),\
+ (u'successful', 1),\
+ (u'mortician', 1),\
+ (u'and', 1),\
+ (u'acquaintance', 1),\
+ (u'of', 1),\
+ (u'the', 1),\
+ (u'Don,', 1),\
+ (u'whose', 1),\
+ (u'daughter', 1),\
+ (u'was', 1),\
+ (u'brutally', 1),\
+ (u'beaten', 1),\
+ (u'by', 1),\
+ (u'two', 1),\
+ (u'young', 1),\
+ (u'men', 1),\
+ (u'because', 1),\
+ (u'she', 1),\
+ (u'refused', 1),\
+ (u'their', 1),\
+ (u'advances;', 1),\
+ (u'the', 1),\
+ (u'men', 1),\
+ (u'received', 1),\
+ (u'minimal', 1),\
+ (u'punishment.', 1),\
+ (u'The', 1),\
+ (u'Don', 1),\
+ (u'is', 1),\
+ (u'disappointed', 1),\
+ (u'in', 1),\
+ (u'Bonasera,', 1),\
+ (u"who'd", 1),\
+ (u'avoided', 1),\
+ (u'most', 1),\
+ (u'contact', 1),\
+ (u'with', 1),\
+ (u'the', 1),\
+ (u'Don', 1),\
+ (u'due', 1),\
+ (u'to', 1),\
+ (u"Corleone's", 1),\
+ (u'nefarious', 1),\
+ (u'business', 1),\
+ (u'dealings.', 1),\
+ (u'The', 1),\
+ (u"Don's", 1),\
+ (u'wife', 1),\
+ (u'is', 1),\
+ (u'godmother', 1),\
+ (u'to', 1),\
+ (u"Bonasera's", 1),\
+ (u'shamed', 1),\
+ (u'daughter,', 1),\
+ (u'a', 1),\
+ (u'relationship', 1),\
+ (u'the', 1),\
+ (u'Don', 1),\
+ (u'uses', 1),\
+ (u'to', 1),\
+ (u'extract', 1),\
+ (u'new', 1),\
+ (u'loyalty', 1),\
+ (u'from', 1),\
+ (u'the', 1),\
+ (u'undertaker.', 1),\
+ (u'The', 1),\
+ (u'Don', 1),\
+ (u'agrees', 1),\
+ (u'to', 1),\
+ (u'have', 1),\
+ (u'his', 1),\
+ (u'men', 1),\
+ (u'punish', 1),\
+ (u'the', 1),\
+ (u'young', 1),\
+ (u'men', 1),\
+ (u'responsible.Meanwhile,', 1),\
+ (u'the', 1),\
+ (u"Don's", 1),\
+ (u'youngest', 1),\
+ (u'son', 1),\
+ (u'Michael', 1),\
+ (u'(Al', 1),\
+ (u'Pacino),', 1),\
+ (u'a', 1),\
+ (u'decorated', 1),\
+ (u'Marine', 1),\
+ (u'hero', 1),\
+ (u'returning', 1),\
+ (u'from', 1),\
+ (u'World', 1),\
+ (u'War', 1),\
+ (u'II', 1),\
+ (u'service,', 1),\
+ (u'arrives', 1),\
+ (u'at', 1),\
+ (u'the', 1),\
+ (u'wedding', 1),\
+ (u'and', 1),\
+ (u'tells', 1),\
+ (u'his', 1),\
+ (u'girlfriend', 1),\
+ (u'Kay', 1),\
+ (u'Adams', 1),\
+ (u'(Diane', 1),\
+ (u'Keaton)', 1),\
+ (u'anecdotes', 1),\
+ (u'about', 1),\
+ (u'his', 1),\
+ (u'family,', 1),\
+ (u'informing', 1),\
+ (u'her', 1),\
+ (u'about', 1),\
+ (u'his', 1),\
+ (u"father's", 1),\
+ (u'criminal', 1),\
+ (u'life;', 1),\
+ (u'he', 1),\
+ (u'reassures', 1),\
+ (u'her', 1),\
+ (u'that', 1),\
+ (u'he', 1),\
+ (u'is', 1),\
+ (u'different', 1),\
+ (u'from', 1),\
+ (u'his', 1),\
+ (u'family', 1),\
+ (u'and', 1),\
+ (u"doesn't", 1),\
+ (u'plan', 1),\
+ (u'to', 1),\
+ (u'join', 1),\
+ (u'them', 1),\
+ (u'in', 1),\
+ (u'their', 1),\
+ (u'criminal', 1),\
+ (u'dealings.', 1),\
+ (u'The', 1),\
+ (u'wedding', 1),\
+ (u'scene', 1),\
+ (u'serves', 1),\
+ (u'as', 1),\
+ (u'critical', 1),\
+ (u'exposition', 1),\
+ (u'for', 1),\
+ (u'the', 1),\
+ (u'remainder', 1),\
+ (u'of', 1),\
+ (u'the', 1),\
+ (u'film,', 1),\
+ (u'as', 1),\
+ (u'Michael', 1),\
+ (u'introduces', 1),\
+ (u'the', 1),\
+ (u'main', 1),\
+ (u'characters', 1),\
+ (u'to', 1),\
+ (u'Kay.', 1),\
+ (u'Fredo', 1),\
+ (u'(John', 1),\
+ (u'Cazale),', 1),\
+ (u"Michael's", 1),\
+ (u'next', 1),\
+ (u'older', 1),\
+ (u'brother,', 1),\
+ (u'is', 1),\
+ (u'a', 1),\
+ (u'bit', 1),\
+ (u'dim-witted', 1),\
+ (u'and', 1),\
+ (u'quite', 1),\
+ (u'drunk', 1),\
+ (u'by', 1),\
+ (u'the', 1),\
+ (u'time', 1),\
+ (u'he', 1),\
+ (u'finds', 1),\
+ (u'Michael', 1),\
+ (u'at', 1),\
+ (u'the', 1),\
+ (u'party.', 1),\
+ (u'Sonny', 1),\
+ (u'(James', 1),\
+ (u'Caan),', 1),\
+ (u'the', 1),\
+ (u"Don's", 1),\
+ (u'eldest', 1),\
+ (u'child', 1),\
+ (u'and', 1),\
+ (u'next', 1),\
+ (u'in', 1),\
+ (u'line', 1),\
+ (u'to', 1),\
+ (u'become', 1),\
+ (u'Don', 1),\
+ (u'upon', 1),\
+ (u'his', 1),\
+ (u"father's", 1),\
+ (u'retirement,', 1),\
+ (u'is', 1),\
+ (u'married', 1),\
+ (u'but', 1),\
+ (u'he', 1),\
+ (u'is', 1),\
+ (u'a', 1),\
+ (u'hot-tempered', 1),\
+ (u'philanderer', 1),\
+ (u'who', 1),\
+ (u'sneaks', 1),\
+ (u'into', 1),\
+ (u'a', 1),\
+ (u'bedroom', 1),\
+ (u'to', 1),\
+ (u'have', 1),\
+ (u'sex', 1),\
+ (u'with', 1),\
+ (u'one', 1),\
+ (u'of', 1),\
+ (u"Connie's", 1),\
+ (u'bridesmaids,', 1),\
+ (u'Lucy', 1),\
+ (u'Mancini', 1),\
+ (u'(Jeannie', 1),\
+ (u'Linero).', 1),\
+ (u'Tom', 1),\
+ (u'Hagen', 1),\
+ (u'is', 1),\
+ (u'not', 1),\
+ (u'related', 1),\
+ (u'to', 1),\
+ (u'the', 1),\
+ (u'family', 1),\
+ (u'by', 1),\
+ (u'blood', 1),\
+ (u'but', 1),\
+ (u'is', 1),\
+ (u'considered', 1),\
+ (u'one', 1),\
+ (u'of', 1),\
+ (u'the', 1),\
+ (u"Don's", 1),\
+ (u'sons', 1),\
+ (u'because', 1),\
+ (u'he', 1),\
+ (u'was', 1),\
+ (u'homeless', 1),\
+ (u'when', 1),\
+ (u'he', 1),\
+ (u'befriended', 1),\
+ (u'Sonny', 1),\
+ (u'in', 1),\
+ (u'the', 1),\
+ (u'Little', 1),\
+ (u'Italy', 1),\
+ (u'neighborhood', 1),\
+ (u'of', 1),\
+ (u'Manhattan', 1),\
+ (u'and', 1),\
+ (u'the', 1),\
+ (u'Don', 1),\
+ (u'took', 1),\
+ (u'him', 1),\
+ (u'in.', 1),\
+ (u'Now', 1),\
+ (u'a', 1),\
+ (u'talented', 1),\
+ (u'attorney,', 1),\
+ (u'Tom', 1),\
+ (u'is', 1),\
+ (u'being', 1),\
+ (u'groomed', 1),\
+ (u'for', 1),\
+ (u'the', 1),\
+ (u'important', 1),\
+ (u'position', 1),\
+ (u'of', 1),\
+ (u'consigliere', 1),\
+ (u'(counselor)', 1),\
+ (u'to', 1),\
+ (u'the', 1),\
+ (u'Don,', 1),\
+ (u'despite', 1),\
+ (u'his', 1),\
+ (u'non-Sicilian', 1),\
+ (u'heritage.Also', 1),\
+ (u'among', 1),\
+ (u'the', 1),\
+ (u'guests', 1),\
+ (u'at', 1),\
+ (u'the', 1),\
+ (u'celebration', 1),\
+ (u'is', 1),\
+ (u'the', 1),\
+ (u'famous', 1),\
+ (u'singer', 1),\
+ (u'Johnny', 1),\
+ (u'Fontane', 1),\
+ (u'(Al', 1),\
+ (u'Martino),', 1),\
+ (u"Corleone's", 1),\
+ (u'godson,', 1),\
+ (u'who', 1),\
+ (u'has', 1),\
+ (u'come', 1),\
+ (u'from', 1),\
+ (u'Hollywood', 1),\
+ (u'to', 1),\
+ (u'petition', 1),\
+ (u"Vito's", 1),\
+ (u'help', 1),\
+ (u'in', 1),\
+ (u'landing', 1),\
+ (u'a', 1),\
+ (u'movie', 1),\
+ (u'role', 1),\
+ (u'that', 1),\
+ (u'will', 1),\
+ (u'revitalize', 1),\
+ (u'his', 1),\
+ (u'flagging', 1),\
+ (u'career.', 1),\
+ (u'Jack', 1),\
+ (u'Woltz', 1),\
+ (u'(John', 1),\
+ (u'Marley),', 1),\
+ (u'the', 1),\
+ (u'head', 1),\
+ (u'of', 1),\
+ (u'the', 1),\
+ (u'studio,', 1),\
+ (u'denies', 1),\
+ (u'Fontane', 1),\
+ (u'the', 1),\
+ (u'part', 1),\
+ (u'(a', 1),\
+ (u'character', 1),\
+ (u'much', 1),\
+ (u'like', 1),\
+ (u'Johnny', 1),\
+ (u'himself),', 1),\
+ (u'which', 1),\
+ (u'will', 1),\
+ (u'make', 1),\
+ (u'him', 1),\
+ (u'an', 1),\
+ (u'even', 1),\
+ (u'bigger', 1),\
+ (u'star,', 1),\
+ (u'but', 1),\
+ (u'Don', 1),\
+ (u'Corleone', 1),\
+ (u'explains', 1),\
+ (u'to', 1),\
+ (u'Johnny:', 1),\
+ (u'"I\\'m', 1),\
+ (u'gonna', 1),\
+ (u'make', 1),\
+ (u'him', 1),\
+ (u'an', 1),\
+ (u'offer', 1),\
+ (u'he', 1),\
+ (u"can't", 1),\
+ (u'refuse."', 1),\
+ (u'The', 1),\
+ (u'Don', 1),\
+ (u'also', 1),\
+ (u'receives', 1),\
+ (u'congratulatory', 1),\
+ (u'salutations', 1),\
+ (u'from', 1),\
+ (u'Luca', 1),\
+ (u'Brasi,', 1),\
+ (u'a', 1),\
+ (u'terrifying', 1),\
+ (u'enforcer', 1),\
+ (u'in', 1),\
+ (u'the', 1),\
+ (u'criminal', 1),\
+ (u'underworld,', 1),\
+ (u'and', 1),\
+ (u'fills', 1),\
+ (u'a', 1),\
+ (u'request', 1),\
+ (u'from', 1),\
+ (u'the', 1),\
+ (u'baker', 1),\
+ (u'who', 1),\
+ (u'made', 1),\
+ (u"Connie's", 1),\
+ (u'wedding', 1),\
+ (u'cake', 1),\
+ (u'who', 1),\
+ (u'wishes', 1),\
+ (u'for', 1),\
+ (u'his', 1),\
+ (u'nephew', 1),\
+ (u'Enzo', 1),\
+ (u'to', 1),\
+ (u'become', 1),\
+ (u'an', 1),\
+ (u'American', 1),\
+ (u'citizen.After', 1),\
+ (u'the', 1),\
+ (u'wedding,', 1),\
+ (u'Hagen', 1),\
+ (u'is', 1),\
+ (u'dispatched', 1),\
+ (u'to', 1),\
+ (u'Los', 1),\
+ (u'Angeles', 1),\
+ (u'to', 1),\
+ (u'meet', 1),\
+ (u'with', 1),\
+ (u'Woltz,', 1),\
+ (u'but', 1),\
+ (u'Woltz', 1),\
+ (u'angrily', 1),\
+ (u'tells', 1),\
+ (u'him', 1),\
+ (u'that', 1),\
+ (u'he', 1),\
+ (u'will', 1),\
+ (u'never', 1),\
+ (u'cast', 1),\
+ (u'Fontane', 1),\
+ (u'in', 1),\
+ (u'the', 1),\
+ (u'role.', 1),\
+ (u'Woltz', 1),\
+ (u'holds', 1),\
+ (u'a', 1),\
+ (u'grudge', 1),\
+ (u'because', 1),\
+ (u'Fontane', 1),\
+ (u'seduced', 1),\
+ (u'and', 1),\
+ (u'"ruined"', 1),\
+ (u'a', 1),\
+ (u'starlet', 1),\
+ (u'who', 1),\
+ (u'Woltz', 1),\
+ (u'had', 1),\
+ (u'been', 1),\
+ (u'grooming', 1),\
+ (u'for', 1),\
+ (u'stardom', 1),\
+ (u'and', 1),\
+ (u'with', 1),\
+ (u'whom', 1),\
+ (u'he', 1),\
+ (u'had', 1),\
+ (u'a', 1),\
+ (u'sexual', 1),\
+ (u'relationship.', 1),\
+ (u'Woltz', 1),\
+ (u'is', 1),\
+ (u'persuaded', 1),\
+ (u'to', 1),\
+ (u'give', 1),\
+ (u'Johnny', 1),\
+ (u'the', 1),\
+ (u'role,', 1),\
+ (u'however,', 1),\
+ (u'when', 1),\
+ (u'he', 1),\
+ (u'wakes', 1),\
+ (u'up', 1),\
+ (u'early', 1),\
+ (u'the', 1),\
+ (u'next', 1),\
+ (u'morning', 1),\
+ (u'and', 1),\
+ (u'feels', 1),\
+ (u'something', 1),\
+ (u'wet', 1),\
+ (u'in', 1),\
+ (u'his', 1),\
+ (u'bed.', 1),\
+ (u'He', 1),\
+ (u'pulls', 1),\
+ (u'back', 1),\
+ (u'the', 1),\
+ (u'sheets', 1),\
+ (u'and', 1),\
+ (u'finds', 1),\
+ (u'himself', 1),\
+ (u'in', 1),\
+ (u'a', 1),\
+ (u'pool', 1),\
+ (u'of', 1),\
+ (u'blood;', 1),\
+ (u'he', 1),\
+ (u'screams', 1),\
+ (u'in', 1),\
+ (u'horror', 1),\
+ (u'when', 1),\
+ (u'he', 1),\
+ (u'discovers', 1),\
+ (u'the', 1),\
+ (u'severed', 1),\
+ (u'head', 1),\
+ (u'of', 1),\
+ (u'his', 1),\
+ (u'prized', 1),\
+ (u'$600,000', 1),\
+ (u'stud', 1),\
+ (u'horse,', 1),\
+ (u'Khartoum,', 1),\
+ (u'in', 1),\
+ (u'the', 1),\
+ (u'bed', 1),\
+ (u'with', 1),\
+ (u'him.', 1),\
+ (u'(A', 1),\
+ (u'deleted', 1),\
+ (u'scene', 1),\
+ (u'from', 1),\
+ (u'the', 1),\
+ (u'film', 1),\
+ (u'implies', 1),\
+ (u'that', 1),\
+ (u'Luca', 1),\
+ (u'Brasi', 1),\
+ (u'(Lenny', 1),\
+ (u'Montana),', 1),\
+ (u"Vito's", 1),\
+ (u'top', 1),\
+ (u'"button', 1),\
+ (u'man"', 1),\
+ (u'or', 1),\
+ (u'hitman,', 1),\
+ (u'is', 1),\
+ (u'responsible.)Upon', 1),\
+ (u"Hagen's", 1),\
+ (u'return,', 1),\
+ (u'the', 1),\
+ (u'family', 1),\
+ (u'meets', 1),\
+ (u'with', 1),\
+ (u'Virgil', 1),\
+ (u'"The', 1),\
+ (u'Turk"', 1),\
+ (u'Sollozzo', 1),\
+ (u'(Al', 1),\
+ (u'Lettieri),', 1),\
+ (u'who', 1),\
+ (u'is', 1),\
+ (u'being', 1),\
+ (u'backed', 1),\
+ (u'by', 1),\
+ (u'the', 1),\
+ (u'rival', 1),\
+ (u'Tattaglia', 1),\
+ (u'family.', 1),\
+ (u'He', 1),\
+ (u'asks', 1),\
+ (u'Don', 1),\
+ (u'Corleone', 1),\
+ (u'for', 1),\
+ (u'financing', 1),\
+ (u'as', 1),\
+ (u'well', 1),\
+ (u'as', 1),\
+ (u'political', 1),\
+ (u'and', 1),\
+ (u'legal', 1),\
+ (u'protection', 1),\
+ (u'for', 1),\
+ (u'importing', 1),\
+ (u'and', 1),\
+ (u'distributing', 1),\
+ (u'heroin.', 1),\
+ (u'Despite', 1),\
+ (u'the', 1),\
+ (u'huge', 1),\
+ (u'profit', 1),\
+ (u'to', 1),\
+ (u'be', 1),\
+ (u'made,', 1),\
+ (u'Vito', 1),\
+ (u'Corleone', 1),\
+ (u'refuses,', 1),\
+ (u'explaining', 1),\
+ (u'that', 1),\
+ (u'his', 1),\
+ (u'political', 1),\
+ (u'influence', 1),\
+ (u'would', 1),\
+ (u'be', 1),\
+ (u'jeopardized', 1),\
+ (u'by', 1),\
+ (u'a', 1),\
+ (u'move', 1),\
+ (u'into', 1),\
+ (u'the', 1),\
+ (u'narcotics', 1),\
+ (u'trade.', 1),\
+ (u'The', 1),\
+ (u"Don's", 1),\
+ (u'eldest', 1),\
+ (u'son,', 1),\
+ (u'Sonny,', 1),\
+ (u'who', 1),\
+ (u'had', 1),\
+ (u'earlier', 1),\
+ (u'urged', 1),\
+ (u'the', 1),\
+ (u'family', 1),\
+ (u'to', 1),\
+ (u'enter', 1),\
+ (u'the', 1),\
+ (u'narcotics', 1),\
+ (u'trade,', 1),\
+ (u'breaks', 1),\
+ (u'ranks', 1),\
+ (u'during', 1),\
+ (u'the', 1),\
+ (u'meeting', 1),\
+ (u'and', 1),\
+ (u'questions', 1),\
+ (u"Sollozzo's", 1),\
+ (u'assurances', 1),\
+ (u'as', 1),\
+ (u'to', 1),\
+ (u'the', 1),\
+ (u'Corleone', 1),\
+ (u"Family's", 1),\
+ (u'investment', 1),\
+ (u'being', 1),\
+ (u'guaranteed', 1),\
+ (u'by', 1),\
+ (u'the', 1),\
+ (u'Tattaglia', 1),\
+ (u'Family.', 1),\
+ (u'His', 1),\
+ (u'father,', 1),\
+ (u'angry', 1),\
+ (u'at', 1),\
+ (u"Sonny's", 1),\
+ (u'dissension', 1),\
+ (u'in', 1),\
+ (u'a', 1),\
+ (u'non-family', 1),\
+ (u"member's", 1),\
+ (u'presence,', 1),\
+ (u'privately', 1),\
+ (u'rebukes', 1),\
+ (u'him', 1),\
+ (u'later.', 1),\
+ (u'Don', 1),\
+ (u'Corleone', 1),\
+ (u'then', 1),\
+ (u'dispatches', 1),\
+ (u'Luca', 1),\
+ (u'Brasi', 1),\
+ (u'to', 1),\
+ (u'infiltrate', 1),\
+ (u"Sollozzo's", 1),\
+ (u'organization', 1),\
+ (u'and', 1),\
+ (u'report', 1),\
+ (u'back', 1),\
+ (u'with', 1),\
+ (u'information.', 1),\
+ (u'During', 1),\
+ (u'the', 1),\
+ (u'meeting,', 1),\
+ (u'while', 1),\
+ (u'Brasi', 1),\
+ (u'is', 1),\
+ (u'bent', 1),\
+ (u'over', 1),\
+ (u'to', 1),\
+ (u'allow', 1),\
+ (u'Bruno', 1),\
+ (u'Tattaglia', 1),\
+ (u'to', 1),\
+ (u'light', 1),\
+ (u'his', 1),\
+ (u'cigarette,', 1),\
+ (u'he', 1),\
+ (u'is', 1),\
+ (u'stabbed', 1),\
+ (u'in', 1),\
+ (u'the', 1),\
+ (u'hand', 1),\
+ (u'by', 1),\
+ (u'Sollozzo,', 1),\
+ (u'and', 1),\
+ (u'is', 1),\
+ (u'subsequently', 1),\
+ (u'garroted', 1),\
+ (u'by', 1),\
+ (u'an', 1),\
+ (u'assassin.Soon', 1),\
+ (u'after', 1),\
+ (u'his', 1),\
+ (u'meeting', 1),\
+ (u'with', 1),\
+ (u'Sollozzo,', 1),\
+ (u'Don', 1),\
+ (u'Corleone', 1),\
+ (u'is', 1),\
+ (u'gunned', 1),\
+ (u'down', 1),\
+ (u'in', 1),\
+ (u'an', 1),\
+ (u'assassination', 1),\
+ (u'attempt', 1),\
+ (u'just', 1),\
+ (u'outside', 1),\
+ (u'his', 1),\
+ (u'office,', 1),\
+ (u'and', 1),\
+ (u'it', 1),\
+ (u'is', 1),\
+ (u'not', 1),\
+ (u'immediately', 1),\
+ (u'known', 1),\
+ (u'whether', 1),\
+ (u'he', 1),\
+ (u'has', 1),\
+ (u'survived.', 1),\
+ (u'Fredo', 1),\
+ (u'Corleone', 1),\
+ (u'had', 1),\
+ (u'been', 1),\
+ (u'assigned', 1),\
+ (u'driving', 1),\
+ (u'and', 1),\
+ (u'protection', 1),\
+ (u'duty', 1),\
+ (u'for', 1),\
+ (u'his', 1),\
+ (u'father', 1),\
+ (u'when', 1),\
+ (u'Paulie', 1),\
+ (u'Gatto,', 1),\
+ (u'the', 1),\
+ (u"Don's", 1),\
+ (u'usual', 1),\
+ (u'bodyguard,', 1),\
+ (u'had', 1),\
+ (u'called', 1),\
+ (u'in', 1),\
+ (u'sick.', 1),\
+ (u'Fredo', 1),\
+ (u'proves', 1),\
+ (u'to', 1),\
+ (u'be', 1),\
+ (u'ineffectual,', 1),\
+ (u'fumbling', 1),\
+ (u'with', 1),\
+ (u'his', 1),\
+ (u'gun', 1),\
+ (u'and', 1),\
+ (u'unable', 1),\
+ (u'to', 1),\
+ (u'shoot', 1),\
+ (u'back.', 1),\
+ (u'When', 1),\
+ (u'Sonny', 1),\
+ (u'hears', 1),\
+ (u'about', 1),\
+ (u'the', 1),\
+ (u'Don', 1),\
+ (u'being', 1),\
+ (u'shot', 1),\
+ (u'and', 1),\
+ (u"Paulie's", 1),\
+ (u'absence,', 1),\
+ (u'he', 1),\
+ (u'orders', 1),\
+ (u'Clemenza', 1),\
+ (u'(Richard', 1),\
+ (u'S.', 1),\
+ (u'Castellano)', 1),\
+ (u'to', 1),\
+ (u'find', 1),\
+ (u'Paulie', 1),\
+ (u'and', 1),\
+ (u'bring', 1),\
+ (u'him', 1),\
+ (u'to', 1),\
+ (u'the', 1),\
+ (u"Don's", 1),\
+ (u'house.Sollozzo', 1),\
+ (u'abducts', 1),\
+ (u'Tom', 1),\
+ (u'Hagen', 1),\
+ (u'and', 1),\
+ (u'persuades', 1),\
+ (u'him', 1),\
+ (u'to', 1),\
+ (u'offer', 1),\
+ (u'Sonny', 1),\
+ (u'the', 1),\
+ (u'deal', 1),\
+ (u'previously', 1),\
+ (u'offered', 1),\
+ (u'to', 1),\
+ (u'his', 1),\
+ (u'father.', 1),\
+ (u'Enraged,', 1),\
+ (u'Sonny', 1),\
+ (u'refuses', 1),\
+ (u'to', 1),\
+ (u'consider', 1),\
+ (u'it', 1),\
+ (u'and', 1),\
+ (u'issues', 1),\
+ (u'an', 1),\
+ (u'ultimatum', 1),\
+ (u'to', 1),\
+ (u'the', 1),\
+ (u'Tattaglias:', 1),\
+ (u'turn', 1),\
+ (u'over', 1),\
+ (u'Sollozzo', 1),\
+ (u'or', 1),\
+ (u'face', 1),\
+ (u'a', 1),\
+ (u'lengthy,', 1),\
+ (u'bloody', 1),\
+ (u'and', 1),\
+ (u'costly', 1),\
+ (u'(for', 1),\
+ (u'both', 1),\
+ (u'sides)', 1),\
+ (u'gang', 1),\
+ (u'war.', 1),\
+ (u'They', 1),\
+ (u'refuse,', 1),\
+ (u'and', 1),\
+ (u'instead', 1),\
+ (u'send', 1),\
+ (u'Sonny', 1),\
+ (u'"a', 1),\
+ (u'Sicilian', 1),\
+ (u'message,"', 1),\
+ (u'in', 1),\
+ (u'the', 1),\
+ (u'form', 1),\
+ (u'of', 1),\
+ (u'two', 1),\
+ (u'fresh', 1),\
+ (u'fish', 1),\
+ (u'wrapped', 1),\
+ (u'in', 1),\
+ (u'Luca', 1),\
+ (u"Brasi's", 1),\
+ (u'bullet-proof', 1),\
+ (u'vest,', 1),\
+ (u'to', 1),\
+ (u'tell', 1),\
+ (u'the', 1),\
+ (u'Corleones', 1),\
+ (u'that', 1),\
+ (u'Luca', 1),\
+ (u'Brasi', 1),\
+ (u'"sleeps', 1),\
+ (u'with', 1),\
+ (u'the', 1),\
+ (u'fishes."Clemenza', 1),\
+ (u'later', 1),\
+ (u'takes', 1),\
+ (u'Paulie', 1),\
+ (u'and', 1),\
+ (u'one', 1),\
+ (u'of', 1),\
+ (u'the', 1),\
+ (u"family's", 1),\
+ (u'hitmen,', 1),\
+ (u'Rocco', 1),\
+ (u'Lampone,', 1),\
+ (u'for', 1),\
+ (u'a', 1),\
+ (u'drive', 1),\
+ (u'into', 1),\
+ (u'Manhattan.', 1),\
+ (u'Sonny', 1),\
+ (u'wants', 1),\
+ (u'to', 1),\
+ (u'"go', 1),\
+ (u'to', 1),\
+ (u'the', 1),\
+ (u'mattresses"', 1),\
+ (u'--', 1),\
+ (u'set', 1),\
+ (u'up', 1),\
+ (u'beds', 1),\
+ (u'in', 1),\
+ (u'apartments', 1),\
+ (u'for', 1),\
+ (u'Corleone', 1),\
+ (u'button', 1),\
+ (u'men', 1),\
+ (u'to', 1),\
+ (u'operate', 1),\
+ (u'out', 1),\
+ (u'of', 1),\
+ (u'in', 1),\
+ (u'the', 1),\
+ (u'event', 1),\
+ (u'that', 1),\
+ (u'the', 1),\
+ (u'crime', 1),\
+ (u'war', 1),\
+ (u'breaks', 1),\
+ (u'out.', 1),\
+ (u'On', 1),\
+ ...]\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs2 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordCounts\cf3 \strokec3 .\cf8 \strokec8 take\cf3 \strokec3 (\cf10 \strokec10 15\cf3 \strokec3 )\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[43]: \cf12 \strokec12 \
+[(u'Slater,', 1),\
+ (u'middleman', 1),\
+ (u'border."', 1),\
+ (u'foul', 3),\
+ (u'four', 19),\
+ (u'peaceful,', 2),\
+ (u'die).', 1),\
+ (u"friend's", 2),\
+ (u'Wolfit),', 1),\
+ (u'comically', 1),\
+ (u'increase', 1),\
+ (u'Itzak', 1),\
+ (u'inheritance,', 1),\
+ (u'inheritance.', 2),\
+ (u'snowing', 1)]\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 View Top 20 words in descending order\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordCounts\cf3 \strokec3 .\cf8 \strokec8 takeOrdered\cf3 \strokec3 (\cf10 \strokec10 20\cf3 \strokec3 , 
+\f4\b \cf14 \strokec14 lambda
+\f3\b0 \cf3 \strokec3  (\cf8 \strokec8 w\cf3 \strokec3 ,\cf8 \strokec8 c\cf3 \strokec3 ): \cf8 \strokec8 -c\cf3 \strokec3 )\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[50]: \cf12 \strokec12 \
+[(u'the', 8622),\
+ (u'to', 5225),\
+ (u'and', 4940),\
+ (u'a', 3480),\
+ (u'of', 2763),\
+ (u'his', 2185),\
+ (u'in', 2174),\
+ (u'is', 2153),\
+ (u'that', 1983),\
+ (u'he', 1901),\
+ (u'with', 1260),\
+ (u'for', 1096),\
+ (u'her', 1040),\
+ (u'him', 973),\
+ (u'on', 858),\
+ (u'at', 830),\
+ (u'as', 816),\
+ (u'by', 787),\
+ (u'but', 724),\
+ (u'they', 657)]\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl640\partightenfactor0
+
+\f2\b\fs40 \cf3 \cb5 Part 2: Introduction to DataFrames and SparkSQL\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\b0\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 Word Count with a DataFrame\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf15 \cb5 \strokec15 # import pyspark class Row from module sql\cf3 \strokec3 \
+\pard\pardeftab720\sl260\partightenfactor0
+
+\f4\b \cf14 \strokec14 from
+\f3\b0 \cf3 \strokec3  \cf8 \strokec8 pyspark\cf3 \strokec3 .\cf8 \strokec8 sql\cf3 \strokec3  
+\f4\b \cf14 \strokec14 import
+\f3\b0 \cf3 \strokec3  \cf8 \strokec8 *\cf3 \strokec3 \
+\pard\pardeftab720\sl380\partightenfactor0
+\cf3 \
+\pard\pardeftab720\sl380\partightenfactor0
+\cf15 \strokec15 #First, let's transform our RDD to a Dataframe.\cf3 \strokec3 \
+\pard\pardeftab720\sl380\partightenfactor0
+\cf8 \strokec8 wordsCountsDF\cf3 \strokec3  \cf8 \strokec8 =\cf3 \strokec3  \cf8 \strokec8 wordCounts\cf3 \strokec3 .\cf8 \strokec8 map\cf3 \strokec3 (
+\f4\b \cf14 \strokec14 lambda
+\f3\b0 \cf3 \strokec3  (\cf8 \strokec8 w\cf3 \strokec3 ,\cf8 \strokec8 c\cf3 \strokec3 ): \cf8 \strokec8 Row\cf3 \strokec3 (\cf8 \strokec8 word=w\cf3 \strokec3 , \cf8 \strokec8 count=c\cf3 \strokec3 )).\cf8 \strokec8 toDF\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \cb1 \strokec12 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsCountsDF\cf3 \strokec3 \
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[54]: \cf12 \strokec12 DataFrame[count: bigint, word: string]\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsCountsDF\cf3 \strokec3 .\cf8 \strokec8 printSchema\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \strokec12 root\
+ |-- count: long (nullable = true)\
+ |-- word: string (nullable = true)\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsCountsDF\cf3 \strokec3 .\cf8 \strokec8 collect\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf11 \strokec11 Out[58]: \cf12 \strokec12 \
+[Row(count=1, word=u'Slater,'),\
+ Row(count=1, word=u'middleman'),\
+ Row(count=1, word=u'border."'),\
+ Row(count=3, word=u'foul'),\
+ Row(count=19, word=u'four'),\
+ Row(count=2, word=u'peaceful,'),\
+ Row(count=1, word=u'die).'),\
+ Row(count=2, word=u"friend's"),\
+ Row(count=1, word=u'Wolfit),'),\
+ Row(count=1, word=u'comically'),\
+ Row(count=1, word=u'increase'),\
+ Row(count=1, word=u'Itzak'),\
+ Row(count=1, word=u'inheritance,'),\
+ Row(count=2, word=u'inheritance.'),\
+ Row(count=1, word=u'snowing'),\
+ Row(count=1, word=u'12-year-old'),\
+ Row(count=1, word=u'"J.J."'),\
+ Row(count=4, word=u"Sollozzo's"),\
+ Row(count=3, word=u'Les,'),\
+ Row(count=1, word=u'Pretty").'),\
+ Row(count=1, word=u'innocence,'),\
+ Row(count=1, word=u'innocence.'),\
+ Row(count=4, word=u'sinking'),\
+ Row(count=1, word=u'Tennessee,'),\
+ Row(count=1, word=u'Tennessee.'),\
+ Row(count=1, word=u'wood,'),\
+ Row(count=6, word=u"Charnier's"),\
+ Row(count=1, word=u'"King'),\
+ Row(count=8, word=u'yellow'),\
+ Row(count=2, word=u'hibernating'),\
+ Row(count=7, word=u'Old'),\
+ Row(count=1, word=u'Redding'),\
+ Row(count=14, word=u'screaming'),\
+ Row(count=1, word=u'starships'),\
+ Row(count=4, word=u'Bernardo,'),\
+ Row(count=4, word=u'wooden'),\
+ Row(count=2, word=u'accusatory'),\
+ Row(count=1, word=u'ghoulish,'),\
+ Row(count=1, word=u'Martin).'),\
+ Row(count=5, word=u"couple's"),\
+ Row(count=51, word=u'Paul'),\
+ Row(count=1, word=u'"do'),\
+ Row(count=18, word=u'Sandy'),\
+ Row(count=2, word=u'non-violent'),\
+ Row(count=1, word=u'entertained'),\
+ Row(count=1, word=u'(except'),\
+ Row(count=1, word=u'"Mother."And'),\
+ Row(count=1, word=u'nigh'),\
+ Row(count=1, word=u'ass,"'),\
+ Row(count=2, word=u'Shocked'),\
+ Row(count=4, word=u'her;'),\
+ Row(count=1, word=u'shockwave'),\
+ Row(count=32, word=u'second'),\
+ Row(count=1, word=u'rival,'),\
+ Row(count=1, word=u'sailed'),\
+ Row(count=1, word=u'Tom"'),\
+ Row(count=12, word=u'Townsend'),\
+ Row(count=2, word=u'Kane,'),\
+ Row(count=1, word=u'Kane.'),\
+ Row(count=1, word=u'postpone'),\
+ Row(count=1, word=u'nature,'),\
+ Row(count=1, word=u'escaped!'),\
+ Row(count=1, word=u'sales.'),\
+ Row(count=1, word=u'Dorota.'),\
+ Row(count=1, word=u'"troubles"'),\
+ Row(count=9, word=u'Hamilton'),\
+ Row(count=1, word=u'Ring.In'),\
+ Row(count=1, word=u'College'),\
+ Row(count=1, word=u'hallucinating'),\
+ Row(count=1, word=u'("Jet'),\
+ Row(count=2, word=u'Presidential'),\
+ Row(count=1, word=u'spreads,'),\
+ Row(count=8, word=u'hero'),\
+ Row(count=1, word=u'Obi-Wan.No'),\
+ Row(count=1, word=u'it.Story'),\
+ Row(count=7, word=u'here'),\
+ Row(count=1, word=u'transformation.'),\
+ Row(count=1, word=u'Tenderly,'),\
+ Row(count=1, word=u'Lemmon)'),\
+ Row(count=1, word=u'glass,'),\
+ Row(count=1, word=u'glass"'),\
+ Row(count=1, word=u'gazing'),\
+ Row(count=1, word=u'them.Whomever'),\
+ Row(count=3, word=u'shock,'),\
+ Row(count=3, word=u'shock.'),\
+ Row(count=6, word=u'elaborate'),\
+ Row(count=1, word=u'Wikipedia)'),\
+ Row(count=10, word=u'reports'),\
+ Row(count=1, word=u'finger.'),\
+ Row(count=1, word=u'pressed,'),\
+ Row(count=1, word=u'pursuers.'),\
+ Row(count=1, word=u'"who'),\
+ Row(count=1, word=u'redeemed.'),\
+ Row(count=1, word=u'error.'),\
+ Row(count=4, word=u'criticism'),\
+ Row(count=3, word=u'Dexter'),\
+ Row(count=3, word=u'positions.'),\
+ Row(count=1, word=u'Recalling'),\
+ Row(count=22, word=u'brought'),\
+ Row(count=1, word=u'facility.Elaine'),\
+ Row(count=5, word=u'cops.'),\
+ Row(count=1, word=u'business.At'),\
+ Row(count=1, word=u'Basin'),\
+ Row(count=1, word=u'Security'),\
+ Row(count=18, word=u'unit'),\
+ Row(count=1, word=u'fame,'),\
+ Row(count=1, word=u'catchy'),\
+ Row(count=7, word=u'Earth.'),\
+ Row(count=1, word=u'Sergeant,'),\
+ Row(count=1, word=u'apologetic,'),\
+ Row(count=1, word=u'occupying'),\
+ Row(count=1, word=u'matter.Prewitt'),\
+ Row(count=1, word=u'upbringing,'),\
+ Row(count=19, word=u'music'),\
+ Row(count=8, word=u'card'),\
+ Row(count=3, word=u'passport'),\
+ Row(count=7, word=u'strike'),\
+ Row(count=1, word=u'sweltering'),\
+ Row(count=2, word=u'opponent,'),\
+ Row(count=3, word=u'exorcism'),\
+ Row(count=1, word=u'opponent.'),\
+ Row(count=1, word=u'females'),\
+ Row(count=2, word=u'holy'),\
+ Row(count=14, word=u'successful'),\
+ Row(count=1, word=u'ability,'),\
+ Row(count=1, word=u'menaced'),\
+ Row(count=6, word=u'midst'),\
+ Row(count=1, word=u'doppelgnger'),\
+ Row(count=1, word=u'(many'),\
+ Row(count=4, word=u'locked'),\
+ Row(count=1, word=u'uncountable,'),\
+ Row(count=8, word=u'pursue'),\
+ Row(count=1, word=u'14-year'),\
+ Row(count=2, word=u'supply.'),\
+ Row(count=4, word=u'desk.'),\
+ Row(count=2, word=u'Arwen'),\
+ Row(count=6, word=u'locker'),\
+ Row(count=1, word=u'Merl'),\
+ Row(count=1, word=u'plunger'),\
+ Row(count=1, word=u'Ark.)'),\
+ Row(count=1, word=u'caporegime'),\
+ Row(count=5, word=u'rocks.'),\
+ Row(count=1, word=u'Riff,'),\
+ Row(count=4, word=u'household'),\
+ Row(count=1, word=u'organized'),\
+ Row(count=1, word=u'show"'),\
+ Row(count=1, word=u'Holding'),\
+ Row(count=1, word=u'organizer'),\
+ Row(count=1, word=u'gargantuan'),\
+ Row(count=4, word=u'around.'),\
+ Row(count=1, word=u'1950s-themed'),\
+ Row(count=5, word=u'around,'),\
+ Row(count=4, word=u'complaining'),\
+ Row(count=3, word=u'strip,'),\
+ Row(count=13, word=u'travel'),\
+ Row(count=1, word=u'around"'),\
+ Row(count=2, word=u'cigarette,'),\
+ Row(count=13, word=u'Anita'),\
+ Row(count=23, word=u'machine'),\
+ Row(count=9, word=u'hot'),\
+ Row(count=1, word=u'win,'),\
+ Row(count=1, word=u'beholds'),\
+ Row(count=33, word=u'place'),\
+ Row(count=1, word=u'preferable'),\
+ Row(count=1, word=u'aide.'),\
+ Row(count=97, word=u'A'),\
+ Row(count=9, word=u'Bates'),\
+ Row(count=4, word=u'beauty'),\
+ Row(count=2, word=u'L.'),\
+ Row(count=2, word=u'Charlie.'),\
+ Row(count=6, word=u'Charlie,'),\
+ Row(count=1, word=u'pimps'),\
+ Row(count=10, word=u'wrong'),\
+ Row(count=1, word=u'destined'),\
+ Row(count=1, word=u'sentencing'),\
+ Row(count=1, word=u'Prowse;'),\
+ Row(count=1, word=u'promotion'),\
+ Row(count=1, word=u'types'),\
+ Row(count=2, word=u'effective'),\
+ Row(count=7, word=u'attracts'),\
+ Row(count=2, word=u'revolt'),\
+ Row(count=2, word=u'scoffs'),\
+ Row(count=1, word=u'bum!"'),\
+ Row(count=6, word=u'Another'),\
+ Row(count=1, word=u'airlock;'),\
+ Row(count=2, word=u'"To'),\
+ Row(count=12, word=u'Sheldrake'),\
+ Row(count=1, word=u'backdrop'),\
+ Row(count=1, word=u'sprawling'),\
+ Row(count=1, word=u'effect.'),\
+ Row(count=1, word=u'ambitions,'),\
+ Row(count=1, word=u'partnered'),\
+ Row(count=2, word=u'fingers.'),\
+ Row(count=3, word=u'stabbed'),\
+ Row(count=1, word=u'Partisan'),\
+ Row(count=2, word=u'lovingly'),\
+ Row(count=5, word=u'fit'),\
+ Row(count=9, word=u'bringing'),\
+ Row(count=1, word=u'Bonnie,'),\
+ Row(count=2, word=u'Hickman)'),\
+ Row(count=2, word=u"Gardner's"),\
+ Row(count=4, word=u'survivors'),\
+ Row(count=2, word=u'whiskey,'),\
+ Row(count=25, word=u'hidden'),\
+ Row(count=1, word=u'admirable'),\
+ Row(count=1, word=u'anxiety.'),\
+ Row(count=1, word=u'Bernardo.'),\
+ Row(count=1, word=u'Hickory'),\
+ Row(count=1, word=u'songwriter'),\
+ Row(count=1, word=u'strings,'),\
+ Row(count=2, word=u'Seth'),\
+ Row(count=3, word=u'commemorate'),\
+ Row(count=1, word=u'Rosie,'),\
+ Row(count=1, word=u'man-made'),\
+ Row(count=1, word=u'senator.'),\
+ Row(count=1, word=u'senator,'),\
+ Row(count=1, word=u'bankrupt.'),\
+ Row(count=1, word=u'dumps'),\
+ Row(count=1, word=u'train.Charnier'),\
+ Row(count=1, word=u'Glover),'),\
+ Row(count=2, word=u'interfering'),\
+ Row(count=1, word=u'Wales,'),\
+ Row(count=2, word=u'development'),\
+ Row(count=1, word=u'faints.'),\
+ Row(count=9, word=u'financial'),\
+ Row(count=1, word=u'Combing'),\
+ Row(count=1, word=u'McDermott)'),\
+ Row(count=4, word=u'Hopper'),\
+ Row(count=9, word=u'Eliza'),\
+ Row(count=1, word=u'McDormand)'),\
+ Row(count=1, word=u'Mongolia'),\
+ Row(count=1, word=u'comprises'),\
+ Row(count=1, word=u'exhume'),\
+ Row(count=13, word=u'ring'),\
+ Row(count=2, word=u'whip'),\
+ Row(count=1, word=u'millions).'),\
+ Row(count=8, word=u'Komarovsky'),\
+ Row(count=1, word=u'deactivated,'),\
+ Row(count=1, word=u'1970,'),\
+ Row(count=2, word=u'at,'),\
+ Row(count=1, word=u'excepting'),\
+ Row(count=1, word=u'accidents.'),\
+ Row(count=2, word=u'encourage'),\
+ Row(count=1, word=u'Rabbit'),\
+ Row(count=1, word=u'perturbed'),\
+ Row(count=1, word=u"mid-40's."),\
+ Row(count=2, word=u'outburst'),\
+ Row(count=1, word=u'born:'),\
+ Row(count=1, word=u'(Fire),'),\
+ Row(count=1, word=u'(Thornhill)'),\
+ Row(count=5, word=u'threatened'),\
+ Row(count=29, word=u'given'),\
+ Row(count=1, word=u'Worn'),\
+ Row(count=2, word=u'What'),\
+ Row(count=2, word=u'colony'),\
+ Row(count=1, word=u'speeding,'),\
+ Row(count=1, word=u'sheet'),\
+ Row(count=3, word=u'looks,'),\
+ Row(count=1, word=u'rituals.'),\
+ Row(count=1, word=u'Zhivago,'),\
+ Row(count=6, word=u'enormous'),\
+ Row(count=7, word=u'Eventually,'),\
+ Row(count=1, word=u'are).'),\
+ Row(count=1, word=u'maimed.'),\
+ Row(count=2, word=u'viewing'),\
+ Row(count=1, word=u'ham-shaped'),\
+ Row(count=2, word=u'shipped'),\
+ Row(count=1, word=u'speedy'),\
+ Row(count=1, word=u'divorcing'),\
+ Row(count=1, word=u'Lancaster)'),\
+ Row(count=17, word=u'caught'),\
+ Row(count=5, word=u'speeds'),\
+ Row(count=1, word=u'(probably'),\
+ Row(count=5, word=u'Jacobi'),\
+ Row(count=1, word=u'collateral.'),\
+ Row(count=2, word=u'callous'),\
+ Row(count=1, word=u'Astin)'),\
+ Row(count=1, word=u"Dagol's"),\
+ Row(count=5, word=u'spinning'),\
+ Row(count=1, word=u'East.'),\
+ Row(count=1, word=u'me!'),\
+ Row(count=1, word=u'preverts"'),\
+ Row(count=1, word=u'"Action!";'),\
+ Row(count=1, word=u'Bancroft),'),\
+ Row(count=1, word=u'betrothed'),\
+ Row(count=1, word=u'tango'),\
+ Row(count=1, word=u'"final'),\
+ Row(count=3, word=u'master'),\
+ Row(count=6, word=u'bitter'),\
+ Row(count=1, word=u'sure.'),\
+ Row(count=4, word=u'Cutlass'),\
+ Row(count=1, word=u'Sure,'),\
+ Row(count=1, word=u'saucers.'),\
+ Row(count=2, word=u'mutilated'),\
+ Row(count=1, word=u'retained'),\
+ Row(count=2, word=u'diner.'),\
+ Row(count=4, word=u'crawl'),\
+ Row(count=1, word=u'fight.The'),\
+ Row(count=1, word=u'tires'),\
+ Row(count=2, word=u'trek'),\
+ Row(count=1, word=u'leg,'),\
+ Row(count=1, word=u'showed'),\
+ Row(count=3, word=u'coward'),\
+ Row(count=9, word=u'tree'),\
+ Row(count=13, word=u'likely'),\
+ Row(count=1, word=u'graveyard.Tuco'),\
+ Row(count=6, word=u'shower'),\
+ Row(count=1, word=u'idle'),\
+ Row(count=1, word=u'"Goodbye,'),\
+ Row(count=1, word=u'Angelo'),\
+ Row(count=3, word=u'dozes'),\
+ Row(count=2, word=u'longs'),\
+ Row(count=1, word=u'Kansas.Dorothy'),\
+ Row(count=1, word=u'keeper'),\
+ Row(count=1, word=u'upbraids'),\
+ Row(count=7, word=u'Angela'),\
+ Row(count=1, word=u'Suellen,'),\
+ Row(count=1, word=u"O'Shaughnessy,"),\
+ Row(count=1, word=u'teams.'),\
+ Row(count=1, word=u'transaction.'),\
+ Row(count=2, word=u'Williams'),\
+ Row(count=2, word=u'wholesome'),\
+ Row(count=13, word=u'mostly'),\
+ Row(count=1, word=u'supoena'),\
+ Row(count=1, word=u'fugitive,'),\
+ Row(count=5, word=u'drunk,'),\
+ Row(count=1, word=u'Manny'),\
+ Row(count=3, word=u'drunk.'),\
+ Row(count=1, word=u'aboard.'),\
+ Row(count=1, word=u'(ritual'),\
+ Row(count=13, word=u'instructs'),\
+ Row(count=197, word=u'They'),\
+ Row(count=4, word=u'$10,000'),\
+ Row(count=1, word=u'grips'),\
+ Row(count=1, word=u'agressive'),\
+ Row(count=1, word=u'"nearly'),\
+ Row(count=1, word=u'Bank'),\
+ Row(count=6, word=u'Jones'),\
+ Row(count=74, word=u'even'),\
+ Row(count=1, word=u'Bitterbuck,'),\
+ Row(count=5, word=u'thrilled'),\
+ Row(count=1, word=u'Bertie.'),\
+ Row(count=1, word=u'drug/weapons'),\
+ Row(count=1, word=u'believes,'),\
+ Row(count=1, word=u'believes.'),\
+ Row(count=12, word=u'mouth'),\
+ Row(count=16, word=u'letter'),\
+ Row(count=1, word=u'relieving'),\
+ Row(count=1, word=u'drought'),\
+ Row(count=1, word=u'Stefanelli),'),\
+ Row(count=1, word=u"Vader's."),\
+ Row(count=2, word=u'$3000'),\
+ Row(count=9, word=u'singer'),\
+ Row(count=2, word=u'episode'),\
+ Row(count=1, word=u'blanks.'),\
+ Row(count=1, word=u'stare."'),\
+ Row(count=1, word=u'Clarissa'),\
+ Row(count=1, word=u'professor'),\
+ Row(count=1, word=u'Initially'),\
+ Row(count=1, word=u'return.In'),\
+ Row(count=1, word=u'(Haven)'),\
+ Row(count=1, word=u'1980,"'),\
+ Row(count=6, word=u'affair.'),\
+ Row(count=2, word=u'"Your'),\
+ Row(count=12, word=u'Kubelik'),\
+ Row(count=2, word=u'darkness.'),\
+ Row(count=4, word=u'Chrissie'),\
+ Row(count=7, word=u'bomb'),\
+ Row(count=16, word=u'Union'),\
+ Row(count=1, word=u'contributed'),\
+ Row(count=1, word=u'meetings'),\
+ Row(count=1, word=u'Class,'),\
+ Row(count=1, word=u'sexist'),\
+ Row(count=3, word=u'padded'),\
+ Row(count=1, word=u'occupation,'),\
+ Row(count=3, word=u'Skylar'),\
+ Row(count=1, word=u'retirement).'),\
+ Row(count=1, word=u'cannot.'),\
+ Row(count=1, word=u'there.Meanwhile,'),\
+ Row(count=1, word=u'tempted'),\
+ Row(count=1, word=u'junkyard'),\
+ Row(count=3, word=u'Congressional'),\
+ Row(count=4, word=u"Hal's"),\
+ Row(count=2, word=u'submit'),\
+ Row(count=1, word=u'ment'),\
+ Row(count=2, word=u'bust'),\
+ Row(count=15, word=u'rich'),\
+ Row(count=1, word=u'foolishly'),\
+ Row(count=2, word=u'Senator.'),\
+ Row(count=1, word=u'(Janet'),\
+ Row(count=1, word=u'questioned,'),\
+ Row(count=1, word=u'Stracci'),\
+ Row(count=1, word=u'MacFadyen),'),\
+ Row(count=3, word=u'psychiatric'),\
+ Row(count=5, word=u'pocket'),\
+ Row(count=2, word=u'caporegimes'),\
+ Row(count=1, word=u'lies,'),\
+ Row(count=2, word=u'(Simon'),\
+ Row(count=1, word=u'$10'),\
+ Row(count=1, word=u'diplomas.'),\
+ Row(count=1, word=u'memories:'),\
+ Row(count=1, word=u'telegram.'),\
+ Row(count=1, word=u'telegram,'),\
+ Row(count=1, word=u'groupie'),\
+ Row(count=1, word=u'dipping'),\
+ Row(count=1, word=u'Pentangeli,'),\
+ Row(count=22, word=u'men,'),\
+ Row(count=7, word=u'men.'),\
+ Row(count=2, word=u'bus.'),\
+ Row(count=1, word=u'reviving'),\
+ Row(count=2, word=u'bus,'),\
+ Row(count=9, word=u'release'),\
+ Row(count=2, word=u'boarded'),\
+ Row(count=1, word=u'cape,'),\
+ Row(count=2, word=u'respond'),\
+ Row(count=1, word=u'Linnea.'),\
+ Row(count=6, word=u'fair'),\
+ Row(count=1, word=u'peripheral'),\
+ Row(count=3, word=u'unexpectedly'),\
+ Row(count=1, word=u'Anderson'),\
+ Row(count=1, word=u'truncheon.'),\
+ Row(count=3, word=u'Saruman'),\
+ Row(count=5, word=u'fail'),\
+ Row(count=1, word=u'Abbandando)'),\
+ Row(count=26, word=u'best'),\
+ Row(count=1, word=u'information,'),\
+ Row(count=2, word=u"Szpilman's"),\
+ Row(count=1, word=u'Noble).'),\
+ Row(count=1, word=u'lots'),\
+ Row(count=1, word=u'conversations,'),\
+ Row(count=2, word=u'quest.'),\
+ Row(count=12, word=u'rings'),\
+ Row(count=1, word=u"Professor's"),\
+ Row(count=1, word=u'murky,'),\
+ Row(count=1, word=u'adventure.'),\
+ Row(count=2, word=u'adventure,'),\
+ Row(count=1, word=u'dustman,'),\
+ Row(count=1, word=u'trigger,'),\
+ Row(count=1, word=u'Eldarion'),\
+ Row(count=1, word=u'Advanced'),\
+ Row(count=2, word=u'preserve'),\
+ Row(count=10, word=u'letting'),\
+ Row(count=3, word=u'involved.'),\
+ Row(count=2, word=u'involved,'),\
+ Row(count=1, word=u'rolled'),\
+ Row(count=1, word=u'8:30.'),\
+ Row(count=1, word=u'there.Jillian'),\
+ Row(count=1, word=u'medallion'),\
+ Row(count=1, word=u'tribe.'),\
+ Row(count=1, word=u'dons'),\
+ Row(count=1, word=u'Cities,'),\
+ Row(count=1, word=u'do!"'),\
+ Row(count=2, word=u'pity'),\
+ Row(count=2, word=u'hiding.'),\
+ Row(count=1, word=u'cuffs'),\
+ Row(count=1, word=u'pits'),\
+ Row(count=1, word=u'108'),\
+ Row(count=2, word=u'demanded'),\
+ Row(count=1, word=u'day.Karras'),\
+ Row(count=1, word=u'erupted'),\
+ Row(count=2, word=u'iron'),\
+ Row(count=2, word=u'ambition,'),\
+ Row(count=1, word=u'lot!'),\
+ Row(count=1, word=u"Copperfield'"),\
+ Row(count=1, word=u'Embarassed,'),\
+ Row(count=1, word=u'25,'),\
+ Row(count=1, word=u'doubt.'),\
+ Row(count=24, word=u'money.'),\
+ Row(count=20, word=u'money,'),\
+ Row(count=1, word=u'unhealed'),\
+ Row(count=1, word=u'suspects."'),\
+ Row(count=1, word=u'TwoTom'),\
+ Row(count=1, word=u'individual.'),\
+ Row(count=1, word=u'pregnancy'),\
+ Row(count=7, word=u'blonde'),\
+ Row(count=4, word=u'Laszlo,'),\
+ Row(count=1, word=u'100'),\
+ Row(count=1, word=u'startles'),\
+ Row(count=3, word=u'advances,'),\
+ Row(count=3, word=u'union'),\
+ Row(count=4, word=u"Mac's"),\
+ Row(count=1, word=u'subside'),\
+ Row(count=1, word=u'Kristofferson'),\
+ Row(count=1, word=u'moon.Title:'),\
+ Row(count=1, word=u'privilege'),\
+ Row(count=1, word=u'follow.'),\
+ Row(count=1, word=u'capsized.'),\
+ Row(count=84, word=u'life'),\
+ Row(count=1, word=u'homeland'),\
+ Row(count=1, word=u'hospitalized'),\
+ Row(count=4, word=u'Poland'),\
+ Row(count=4, word=u'worker'),\
+ Row(count=1, word=u'needed,'),\
+ Row(count=1, word=u'befriending'),\
+ Row(count=1, word=u'hotels,'),\
+ Row(count=1, word=u'weaselly'),\
+ Row(count=1, word=u'beach;'),\
+ Row(count=1, word=u'Mandrake,'),\
+ Row(count=9, word=u'worked'),\
+ Row(count=1, word=u'spin'),\
+ Row(count=11, word=u'Holmes'),\
+ Row(count=1, word=u'Elgin'),\
+ Row(count=1, word=u'Benedicto'),\
+ Row(count=1, word=u'Odbody,'),\
+ Row(count=1, word=u'self-propelled'),\
+ Row(count=2, word=u'fall.'),\
+ Row(count=1, word=u'employ'),\
+ Row(count=1, word=u'symbolically'),\
+ Row(count=4, word=u'hates'),\
+ Row(count=1, word=u'SituationThree'),\
+ Row(count=2, word=u'Campbell'),\
+ Row(count=1, word=u'kidnapper.'),\
+ Row(count=1, word=u'kids?"'),\
+ Row(count=1, word=u'flooding'),\
+ Row(count=1, word=u'outdrink'),\
+ Row(count=3, word=u'Roy,'),\
+ Row(count=4, word=u'remembering'),\
+ Row(count=53, word=u'Scottie'),\
+ Row(count=1, word=u"unit's"),\
+ Row(count=1, word=u'Polanski),'),\
+ Row(count=1, word=u'3PO,'),\
+ Row(count=2, word=u'Korova'),\
+ Row(count=1, word=u'"George'),\
+ Row(count=2, word=u'said,'),\
+ Row(count=3, word=u'trusted'),\
+ Row(count=1, word=u'memorial'),\
+ Row(count=1, word=u'uninjured,'),\
+ Row(count=2, word=u'pry'),\
+ Row(count=2, word=u'pieces.'),\
+ Row(count=2, word=u'300'),\
+ Row(count=1, word=u'visitations'),\
+ Row(count=5, word=u'Allenby'),\
+ Row(count=21, word=u'couple'),\
+ Row(count=1, word=u'templates'),\
+ Row(count=1, word=u'snorting'),\
+ Row(count=2, word=u'(due'),\
+ Row(count=1, word=u'effortlessly'),\
+ Row(count=1, word=u'transfixed'),\
+ Row(count=6, word=u'marches'),\
+ Row(count=1, word=u'typhoid'),\
+ Row(count=1, word=u'arrest.'),\
+ Row(count=4, word=u'torpedoes'),\
+ Row(count=1, word=u'routines.'),\
+ Row(count=6, word=u'Angeles'),\
+ Row(count=1, word=u'featherweight'),\
+ Row(count=2, word=u'Benedicts'),\
+ Row(count=1, word=u'Parker),'),\
+ Row(count=1, word=u"Eyes'"),\
+ Row(count=1, word=u'Rangers.'),\
+ Row(count=1, word=u'intrusion'),\
+ Row(count=1, word=u"Gittes'"),\
+ Row(count=8, word=u'Rocky,'),\
+ Row(count=1, word=u'helplessness,'),\
+ Row(count=8, word=u'suffering'),\
+ Row(count=12, word=u'Gavin'),\
+ Row(count=1, word=u'thing.'),\
+ Row(count=1, word=u'thing,'),\
+ Row(count=1, word=u'corporate'),\
+ Row(count=1, word=u'veteran'),\
+ Row(count=1, word=u'place.Then'),\
+ Row(count=1, word=u'sleeps'),\
+ Row(count=1, word=u'[accidental]'),\
+ Row(count=1, word=u'Hindu,'),\
+ Row(count=2, word=u'beset'),\
+ Row(count=2, word=u'Angered,'),\
+ Row(count=1, word=u'plight'),\
+ Row(count=1, word=u'Russian-American'),\
+ Row(count=1, word=u'sandcrawler,'),\
+ Row(count=2, word=u'(Harvey'),\
+ Row(count=6, word=u'campaign'),\
+ Row(count=1, word=u'out-of-town'),\
+ Row(count=1, word=u'salutes'),\
+ Row(count=3, word=u'ease'),\
+ Row(count=240, word=u'had'),\
+ Row(count=2, word=u'exploits'),\
+ Row(count=1, word=u'Lord"'),\
+ Row(count=1, word=u'obedient'),\
+ Row(count=4, word=u'innocent'),\
+ Row(count=1, word=u'complex,'),\
+ Row(count=1, word=u'Savident)'),\
+ Row(count=3, word=u'hat'),\
+ Row(count=1, word=u'not.On'),\
+ Row(count=6, word=u'casually'),\
+ Row(count=1, word=u'sovereign,'),\
+ Row(count=1, word=u'disagreement'),\
+ Row(count=1, word=u'vehicles.'),\
+ Row(count=1, word=u'Maltese'),\
+ Row(count=1, word=u'grey,'),\
+ Row(count=4, word=u'birth'),\
+ Row(count=1, word=u'1964.-Terry'),\
+ Row(count=1, word=u'crown.Two'),\
+ Row(count=3, word=u'shadow'),\
+ Row(count=1, word=u'vigilante'),\
+ Row(count=1, word=u'opinion,'),\
+ Row(count=5, word=u'desire'),\
+ Row(count=10, word=u'war.'),\
+ Row(count=1, word=u'Honour,'),\
+ Row(count=1, word=u'new-found'),\
+ Row(count=1, word=u'Lowry'),\
+ Row(count=1, word=u'Behind'),\
+ Row(count=2, word=u'gangplank'),\
+ Row(count=1, word=u'Raquel'),\
+ Row(count=1, word=u'misled'),\
+ Row(count=27, word=u'steps'),\
+ Row(count=1, word=u'(often'),\
+ Row(count=1, word=u'shot.Back'),\
+ Row(count=3, word=u'trip,'),\
+ Row(count=6, word=u'Sueleen'),\
+ Row(count=1, word=u'Swedish'),\
+ Row(count=2, word=u'Taylor),'),\
+ Row(count=4, word=u'attorney'),\
+ Row(count=1, word=u'casket,'),\
+ Row(count=18, word=u'crowd'),\
+ Row(count=1, word=u'Travis.'),\
+ Row(count=1, word=u'cheeks.'),\
+ Row(count=1, word=u'Travis,'),\
+ Row(count=2, word=u"Jeffries'"),\
+ Row(count=1, word=u'1880.The'),\
+ Row(count=2, word=u'"There'),\
+ Row(count=1, word=u'billboard'),\
+ Row(count=13, word=u'Norton'),\
+ Row(count=1, word=u'Jake,'),\
+ Row(count=1, word=u'shake.'),\
+ Row(count=1, word=u'homestead,'),\
+ Row(count=1096, word=u'for'),\
+ Row(count=1, word=u'contributing'),\
+ Row(count=2, word=u'disheartened'),\
+ Row(count=1, word=u'exposition'),\
+ Row(count=1, word=u'summoned'),\
+ Row(count=1, word=u'spaceship,'),\
+ Row(count=2, word=u"Pippin's"),\
+ Row(count=16, word=u'Later,'),\
+ Row(count=1, word=u'garden).'),\
+ Row(count=1, word=u'mate,'),\
+ Row(count=18, word=u'Nicholson'),\
+ Row(count=1, word=u'died.In'),\
+ Row(count=1, word=u'suits,'),\
+ Row(count=4, word=u'defensive'),\
+ Row(count=12, word=u'losing'),\
+ Row(count=1, word=u'bowing'),\
+ Row(count=1, word=u'chain-link'),\
+ Row(count=3, word=u'Lochlan'),\
+ Row(count=1, word=u'derailed'),\
+ Row(count=7, word=u'dollars'),\
+ Row(count=1, word=u'Susan,'),\
+ Row(count=1, word=u'repellent'),\
+ Row(count=1, word=u'suggestions'),\
+ Row(count=1, word=u'faded,'),\
+ Row(count=1, word=u'Fed'),\
+ Row(count=1, word=u'statements'),\
+ Row(count=1, word=u'barks'),\
+ Row(count=1, word=u'"Plan'),\
+ Row(count=6, word=u'Scotland'),\
+ Row(count=1, word=u'Thugs'),\
+ Row(count=1, word=u'administer'),\
+ Row(count=3, word=u'beings'),\
+ Row(count=1, word=u'sow'),\
+ Row(count=2, word=u'spores'),\
+ Row(count=53, word=u'shoots'),\
+ Row(count=1, word=u'due.'),\
+ Row(count=1, word=u'due,'),\
+ Row(count=1, word=u'(Dabbs'),\
+ Row(count=2, word=u'fields.'),\
+ Row(count=1, word=u'Gulf'),\
+ Row(count=13, word=u'support'),\
+ Row(count=1, word=u'1976.'),\
+ Row(count=1, word=u'fingertips.'),\
+ Row(count=2, word=u'one-time'),\
+ Row(count=1, word=u'senate'),\
+ Row(count=1, word=u'disappeared).The'),\
+ Row(count=3, word=u'despises'),\
+ Row(count=1, word=u"Harbin's"),\
+ Row(count=2, word=u'Device'),\
+ Row(count=1, word=u'dismisses.'),\
+ Row(count=1, word=u'pals'),\
+ Row(count=3, word=u'launching'),\
+ Row(count=2, word=u'Vespa'),\
+ Row(count=1, word=u'them.Marge'),\
+ Row(count=1, word=u'fascination'),\
+ Row(count=1, word=u'$200'),\
+ Row(count=3, word=u'Harbin'),\
+ Row(count=2, word=u'hot-tempered'),\
+ Row(count=2, word=u'movie:'),\
+ Row(count=1, word=u'talents'),\
+ Row(count=1, word=u'kidnapped.'),\
+ Row(count=2, word=u'winter,'),\
+ Row(count=1, word=u'"Most'),\
+ Row(count=1, word=u'Black)'),\
+ Row(count=1, word=u'away.That'),\
+ Row(count=3, word=u'hall.'),\
+ Row(count=1, word=u'Brad,'),\
+ Row(count=3, word=u'hall,'),\
+ Row(count=34, word=u'inside'),\
+ Row(count=1, word=u'virtue,'),\
+ Row(count=1, word=u'devices'),\
+ Row(count=1, word=u'County'),\
+ Row(count=1, word=u'discarding'),\
+ Row(count=35, word=u'Tony'),\
+ Row(count=57, word=u'Andy'),\
+ Row(count=3, word=u'wait.'),\
+ Row(count=1, word=u'Lerner'),\
+ Row(count=1, word=u'II.Mozart'),\
+ Row(count=1, word=u'juvenile'),\
+ Row(count=3, word=u'proved'),\
+ Row(count=3, word=u'interpreter,'),\
+ Row(count=1, word=u'disperse.As'),\
+ Row(count=1, word=u'higher.'),\
+ Row(count=1, word=u'film.)Francis'),\
+ Row(count=2, word=u'Sig'),\
+ Row(count=1, word=u'sprint'),\
+ Row(count=7, word=u"Paul's"),\
+ Row(count=1, word=u'relay'),\
+ Row(count=1, word=u'eventual'),\
+ Row(count=1, word=u'Philadelphia,'),\
+ Row(count=2, word=u'AM'),\
+ Row(count=1, word=u'actor'),\
+ Row(count=2, word=u'Lacombe'),\
+ Row(count=10, word=u'role'),\
+ Row(count=1, word=u'ambitious'),\
+ Row(count=10, word=u'Tracy'),\
+ Row(count=3, word=u'smell'),\
+ Row(count=1, word=u"'s"),\
+ Row(count=2, word=u'Ocean.'),\
+ Row(count=1, word=u'(Mel'),\
+ Row(count=1, word=u'outcropping,'),\
+ Row(count=1, word=u'prove.'),\
+ Row(count=1, word=u'repeats,'),\
+ Row(count=4, word=u'intent'),\
+ Row(count=1, word=u"'a"),\
+ Row(count=7, word=u'senior'),\
+ Row(count=1, word=u'swimmers.'),\
+ Row(count=1, word=u'lunge'),\
+ Row(count=2, word=u'Fambrough'),\
+ Row(count=1, word=u"workers'"),\
+ Row(count=1, word=u'confused,'),\
+ Row(count=1, word=u'family."Michael'),\
+ Row(count=2, word=u"O'Hara"),\
+ Row(count=4, word=u'push'),\
+ Row(count=5, word=u'Empire'),\
+ Row(count=1, word=u'dotes'),\
+ Row(count=1, word=u'mistresses'),\
+ Row(count=1, word=u'posed'),\
+ Row(count=1, word=u'too.Wandering'),\
+ Row(count=2, word=u'chain'),\
+ Row(count=4, word=u'stay,'),\
+ Row(count=1, word=u'Mordente)'),\
+ Row(count=3, word=u'alcoholic,'),\
+ Row(count=5, word=u"film's"),\
+ Row(count=1, word=u'umbrage'),\
+ Row(count=1, word=u'theaters'),\
+ Row(count=3, word=u'bandits'),\
+ Row(count=4, word=u'chair'),\
+ Row(count=7, word=u'hole'),\
+ Row(count=1, word=u'quartered'),\
+ Row(count=1, word=u'injection.In'),\
+ Row(count=1, word=u'Sinatra).'),\
+ Row(count=1, word=u'aviator.'),\
+ Row(count=1, word=u'annoying,'),\
+ Row(count=2, word=u'freelance'),\
+ Row(count=1, word=u'refuse."'),\
+ Row(count=1, word=u'(Rand'),\
+ Row(count=5, word=u'crates'),\
+ Row(count=1, word=u"Weinstock's"),\
+ Row(count=1, word=u'plainclothes'),\
+ Row(count=1, word=u'bicycles'),\
+ Row(count=1, word=u'"Roma'),\
+ Row(count=1, word=u'veterans'),\
+ Row(count=1, word=u'tenacious'),\
+ Row(count=1, word=u'jerk'),\
+ Row(count=1, word=u'buddy.'),\
+ Row(count=3, word=u'cheap'),\
+ Row(count=1, word=u'buddy,'),\
+ Row(count=1, word=u'By,'),\
+ Row(count=1, word=u'Indian,'),\
+ Row(count=1, word=u'half-track.'),\
+ Row(count=1, word=u'spats'),\
+ Row(count=1, word=u'cajoles'),\
+ Row(count=1, word=u'fullest'),\
+ Row(count=6, word=u'child,'),\
+ Row(count=7, word=u'child.'),\
+ Row(count=2, word=u'gate,'),\
+ Row(count=1, word=u'femur'),\
+ Row(count=6, word=u'Dugan'),\
+ Row(count=1, word=u'1305,'),\
+ Row(count=2, word=u'solves'),\
+ Row(count=1, word=u'Marseilles,'),\
+ Row(count=1, word=u'heart.'),\
+ Row(count=94, word=u'leave'),\
+ Row(count=1, word=u'"Dorothy"'),\
+ Row(count=3, word=u'stockade'),\
+ Row(count=1, word=u'inscribed'),\
+ Row(count=2, word=u'loads'),\
+ Row(count=13, word=u'unaware'),\
+ Row(count=2, word=u'spiritual'),\
+ Row(count=1, word=u'findings'),\
+ Row(count=2, word=u'attic'),\
+ Row(count=2, word=u'somber'),\
+ Row(count=1, word=u'downriver.'),\
+ Row(count=2, word=u'soft-spoken'),\
+ Row(count=3, word=u'heavyweight'),\
+ Row(count=1, word=u'"Help'),\
+ Row(count=1, word=u'ogled'),\
+ Row(count=1, word=u'educate'),\
+ Row(count=9, word=u'murder.'),\
+ Row(count=1, word=u'lavishness'),\
+ Row(count=1, word=u'respects.'),\
+ Row(count=1, word=u'situaiton.'),\
+ Row(count=1, word=u'reminiscent'),\
+ Row(count=1, word=u'wayward'),\
+ Row(count=1, word=u'respects,'),\
+ Row(count=10, word=u'falling'),\
+ Row(count=1, word=u'boost'),\
+ Row(count=2, word=u'presence.'),\
+ Row(count=1, word=u'apartments,'),\
+ Row(count=8, word=u'jury'),\
+ Row(count=15, word=u'climbs'),\
+ Row(count=6, word=u'funeral'),\
+ Row(count=1, word=u'film)The'),\
+ Row(count=1, word=u'Europe;'),\
+ Row(count=2, word=u'trail.'),\
+ Row(count=3, word=u'yards'),\
+ Row(count=1, word=u'Osgood,'),\
+ Row(count=1, word=u'sandwiches,'),\
+ Row(count=1, word=u'My'),\
+ Row(count=1, word=u'1307),'),\
+ Row(count=1, word=u"Stanton's"),\
+ Row(count=2, word=u'Sessions,'),\
+ Row(count=1, word=u'Easy,"'),\
+ Row(count=1, word=u'Mmakil,'),\
+ Row(count=1, word=u'Mmakil.'),\
+ Row(count=1, word=u'(Hugo'),\
+ Row(count=1, word=u'Joan",'),\
+ Row(count=1, word=u'Paloma,"'),\
+ Row(count=2, word=u'chanting'),\
+ Row(count=1, word=u'Lee).'),\
+ Row(count=1, word=u'studies'),\
+ Row(count=1, word=u'reclaim'),\
+ Row(count=1, word=u'REAL'),\
+ Row(count=71, word=u'love'),\
+ Row(count=1, word=u'hostages'),\
+ Row(count=2, word=u'prefer'),\
+ Row(count=1, word=u'transom.'),\
+ Row(count=1, word=u'stomps'),\
+ Row(count=1, word=u'Enough'),\
+ Row(count=1, word=u'betraying'),\
+ Row(count=1, word=u'public,'),\
+ Row(count=1, word=u'"retribution"'),\
+ Row(count=1, word=u'rises,'),\
+ Row(count=1, word=u'undergone'),\
+ Row(count=1, word=u'(causing'),\
+ Row(count=32, word=u'working'),\
+ Row(count=1, word=u'life,"'),\
+ Row(count=22, word=u'angry'),\
+ Row(count=4, word=u'ensues,'),\
+ Row(count=3, word=u'tightly'),\
+ Row(count=1, word=u'believe,'),\
+ Row(count=2, word=u"Kayo's"),\
+ Row(count=3, word=u'wondering'),\
+ Row(count=2, word=u'films'),\
+ Row(count=1, word=u'volunteers,'),\
+ Row(count=1, word=u'Those'),\
+ Row(count=1, word=u'scratched'),\
+ Row(count=3, word=u'afford'),\
+ Row(count=1, word=u'pre-flight'),\
+ Row(count=1, word=u'non-family'),\
+ Row(count=1, word=u'consoles'),\
+ Row(count=1, word=u'everywhere'),\
+ Row(count=2, word=u'POW,'),\
+ Row(count=1, word=u'blood.'),\
+ Row(count=1, word=u'Horne),'),\
+ Row(count=1, word=u'task.'),\
+ Row(count=1, word=u'involve'),\
+ Row(count=20, word=u'anything'),\
+ Row(count=2, word=u'originally'),\
+ Row(count=2, word=u'abortion'),\
+ Row(count=2, word=u'incites'),\
+ Row(count=9, word=u'believed'),\
+ Row(count=1, word=u'renew'),\
+ Row(count=1, word=u'detached'),\
+ Row(count=1, word=u'Johnny.At'),\
+ Row(count=1, word=u'understanding.Pulling'),\
+ Row(count=40, word=u'want'),\
+ Row(count=2, word=u'Federal'),\
+ Row(count=1, word=u'parachute'),\
+ Row(count=1, word=u'heard.'),\
+ Row(count=8, word=u'hides'),\
+ Row(count=1, word=u'Trent)'),\
+ Row(count=4, word=u'stole'),\
+ Row(count=2, word=u'monitoring'),\
+ Row(count=1, word=u'savor'),\
+ Row(count=1, word=u'advancing'),\
+ Row(count=2, word=u'Stadler)'),\
+ Row(count=1, word=u'listen,'),\
+ Row(count=1, word=u'overhears.)Clues'),\
+ Row(count=3, word=u'listen.'),\
+ Row(count=1, word=u'laundry'),\
+ Row(count=1, word=u'fleeting."'),\
+ Row(count=1, word=u'6\\'5"'),\
+ Row(count=3, word=u'begging'),\
+ Row(count=2, word=u'blasting'),\
+ Row(count=7, word=u'spot'),\
+ Row(count=63, word=u'Dorothy'),\
+ Row(count=1, word=u'Murron.Following'),\
+ Row(count=16, word=u'date'),\
+ Row(count=3, word=u'mirror.'),\
+ Row(count=2, word=u'data'),\
+ Row(count=1, word=u'there?"'),\
+ Row(count=4, word=u'"Southwest'),\
+ Row(count=1, word=u'stress'),\
+ Row(count=2, word=u'natural'),\
+ Row(count=1, word=u'unmuddied'),\
+ Row(count=1, word=u'sectors'),\
+ Row(count=1, word=u'servants/slaves'),\
+ Row(count=1, word=u'Cisco'),\
+ Row(count=2, word=u'darkened'),\
+ Row(count=148, word=u'so'),\
+ Row(count=1, word=u'coyote,'),\
+ Row(count=3, word=u'skirmish'),\
+ Row(count=20, word=u'pulled'),\
+ Row(count=8, word=u'drunken'),\
+ Row(count=1, word=u'1930s,'),\
+ Row(count=1, word=u'cigarette.'),\
+ Row(count=1, word=u"Stan's"),\
+ Row(count=1, word=u'record,'),\
+ Row(count=2, word=u'Gardner'),\
+ Row(count=2, word=u'Jimmy,'),\
+ Row(count=1, word=u'Oaks'),\
+ Row(count=2, word=u'tendency'),\
+ Row(count=4, word=u'dead;'),\
+ Row(count=1, word=u'Harry.We'),\
+ Row(count=1, word=u'limbs'),\
+ Row(count=1, word=u'disconnect'),\
+ Row(count=1, word=u'paraded'),\
+ Row(count=1, word=u'troubles'),\
+ Row(count=1, word=u'suspicion'),\
+ Row(count=5, word=u"Ryan's"),\
+ Row(count=1, word=u'did?'),\
+ Row(count=1, word=u"dead'"),\
+ Row(count=2, word=u'abusive'),\
+ Row(count=2, word=u'petition'),\
+ Row(count=1, word=u'hop'),\
+ Row(count=1, word=u'thereby'),\
+ Row(count=7, word=u'3'),\
+ Row(count=1, word=u"'O'"),\
+ Row(count=1, word=u'experiment.'),\
+ Row(count=3, word=u'year,'),\
+ Row(count=1, word=u'stickup'),\
+ Row(count=1, word=u'year.'),\
+ Row(count=1, word=u"(There's"),\
+ Row(count=1, word=u'invading'),\
+ Row(count=3, word=u'24'),\
+ Row(count=8, word=u'arriving'),\
+ Row(count=2, word=u'Poliakoff'),\
+ Row(count=11, word=u'Kay'),\
+ Row(count=1, word=u'maintaining'),\
+ Row(count=1, word=u'parade.'),\
+ Row(count=1, word=u'Anybodys,'),\
+ Row(count=1, word=u'could.His'),\
+ Row(count=1, word=u'workforce,'),\
+ Row(count=1, word=u'Yellow'),\
+ Row(count=1, word=u'next,'),\
+ Row(count=1, word=u'privately,'),\
+ Row(count=3, word=u'fisherman'),\
+ Row(count=1, word=u"talkie[2]).Don's"),\
+ Row(count=1, word=u'rundown'),\
+ Row(count=1, word=u'Carletons'),\
+ Row(count=1, word=u'freed.Weeks'),\
+ Row(count=1, word=u"nurse's"),\
+ Row(count=1, word=u'repaired'),\
+ Row(count=1, word=u'(De'),\
+ Row(count=1, word=u'Communists'),\
+ Row(count=1, word=u'Charlie"'),\
+ Row(count=1, word=u'(Ona'),\
+ Row(count=1, word=u'quit,'),\
+ Row(count=1, word=u'scenes.)'),\
+ Row(count=4, word=u'beloved'),\
+ Row(count=1, word=u'disintegrate.'),\
+ Row(count=2, word=u'(Gary'),\
+ Row(count=3, word=u"Lola's"),\
+ Row(count=1, word=u'fainted'),\
+ Row(count=5, word=u'entering'),\
+ Row(count=3, word=u'prostitute,'),\
+ Row(count=1, word=u'cabbie'),\
+ Row(count=1, word=u'omens,'),\
+ Row(count=1, word=u'superior,'),\
+ Row(count=1, word=u'Owen,'),\
+ Row(count=1, word=u'brags'),\
+ Row(count=1, word=u'bass.'),\
+ Row(count=1, word=u'Michigan'),\
+ Row(count=1, word=u'disguise.'),\
+ Row(count=6, word=u'disguise,'),\
+ Row(count=6, word=u'seriously'),\
+ Row(count=2, word=u'(Maria'),\
+ Row(count=1, word=u'Rushmore,'),\
+ Row(count=3, word=u'suggesting'),\
+ Row(count=1, word=u'Jon'),\
+ Row(count=2, word=u'disaster.'),\
+ Row(count=1, word=u'guardsmen,'),\
+ Row(count=1, word=u'rival.As'),\
+ Row(count=2, word=u'siege'),\
+ ...]\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs2 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsCountsDF\cf3 \strokec3 .\cf8 \strokec8 show\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \strokec12 +-----+------------+\
+|count|        word|\
++-----+------------+\
+|    1|     Slater,|\
+|    1|   middleman|\
+|    1|    border."|\
+|    3|        foul|\
+|   19|        four|\
+|    2|   peaceful,|\
+|    1|       die).|\
+|    2|    friend's|\
+|    1|    Wolfit),|\
+|    1|   comically|\
+|    1|    increase|\
+|    1|       Itzak|\
+|    1|inheritance,|\
+|    2|inheritance.|\
+|    1|     snowing|\
+|    1| 12-year-old|\
+|    1|      "J.J."|\
+|    4|  Sollozzo's|\
+|    3|        Les,|\
+|    1|   Pretty").|\
++-----+------------+\
+only showing top 20 rows\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 Show top 20 rows\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsCountsDF\cf3 \strokec3 .\cf8 \strokec8 show\cf3 \strokec3 (\cf10 \strokec10 10\cf3 \strokec3 )\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \strokec12 +-----+---------+\
+|count|     word|\
++-----+---------+\
+|    1|  Slater,|\
+|    1|middleman|\
+|    1| border."|\
+|    3|     foul|\
+|   19|     four|\
+|    2|peaceful,|\
+|    1|    die).|\
+|    2| friend's|\
+|    1| Wolfit),|\
+|    1|comically|\
++-----+---------+\
+only showing top 10 rows\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 Register a Temporary Table\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsCountsDF\cf3 \strokec3 .\cf8 \strokec8 registerTempTable\cf3 \strokec3 (\cf9 \strokec9 "wordCountTable"\cf3 \strokec3 )\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \cb1 \strokec12 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 Query with Spark SQL\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf3 \cb5 \strokec3 %sql\
+\pard\pardeftab720\sl260\partightenfactor0
+
+\f4\b \cf14 \strokec14 SELECT
+\f3\b0 \cf3 \strokec3  word, count 
+\f4\b \cf14 \strokec14 FROM
+\f3\b0 \cf3 \strokec3  wordCountTable 
+\f4\b \cf14 \strokec14 ORDER
+\f3\b0 \cf3 \strokec3  
+\f4\b \cf14 \strokec14 BY
+\f3\b0 \cf3 \strokec3  count 
+\f4\b \cf14 \strokec14 DESC
+\f3\b0 \cf3 \strokec3  
+\f4\b \cf14 \strokec14 limit
+\f3\b0 \cf3 \strokec3  \cf10 \strokec10 20\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs2 \cf3 \cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \cb5 0\cb1 \
+\cb5 2,000\cb1 \
+\cb5 4,000\cb1 \
+\cb5 6,000\cb1 \
+\cb5 8,000\cb1 \
+\cb5 the\cb1 \
+\cb5 to\cb1 \
+\cb5 and\cb1 \
+\cb5 a\cb1 \
+\cb5 of\cb1 \
+\cb5 his\cb1 \
+\cb5 in\cb1 \
+\cb5 is\cb1 \
+\cb5 that\cb1 \
+\cb5 he\cb1 \
+\cb5 with\cb1 \
+\cb5 for\cb1 \
+\cb5 her\cb1 \
+\cb5 him\cb1 \
+\cb5 on\cb1 \
+\cb5 at\cb1 \
+\cb5 as\cb1 \
+\cb5 by\cb1 \
+\cb5 but\cb1 \
+\cb5 they\cb1 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\fs24 \cf3 \cb5 TOOLTIP\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f5\fs30 \cf3 \cb5 word\cb1 \
+\cb5 count\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 Convert RDD to a DataFrame and Register a New Temporary Table\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf15 \cb5 \strokec15 #Convert wordsFiltered RDD to a DataFrame\cf3 \strokec3 \
+\pard\pardeftab720\sl380\partightenfactor0
+\cf8 \strokec8 wordsDF\cf3 \strokec3  \cf8 \strokec8 =\cf3 \strokec3  \cf8 \strokec8 wordsFiltered\cf3 \strokec3 .\cf8 \strokec8 map\cf3 \strokec3 (
+\f4\b \cf14 \strokec14 lambda
+\f3\b0 \cf3 \strokec3  \cf8 \strokec8 w\cf3 \strokec3 : \cf8 \strokec8 Row\cf3 \strokec3 (\cf8 \strokec8 word\cf3 \strokec3  \cf8 \strokec8 =\cf3 \strokec3  \cf8 \strokec8 w\cf3 \strokec3 ,\cf8 \strokec8 count\cf3 \strokec3  \cf8 \strokec8 =\cf3 \strokec3  \cf10 \strokec10 1\cf3 \strokec3 )).\cf8 \strokec8 toDF\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \cb1 \strokec12 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsDF\cf3 \strokec3 .\cf8 \strokec8 show\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \strokec12 +-----+----------+\
+|count|      word|\
++-----+----------+\
+|    1|        In|\
+|    1|      late|\
+|    1|    summer|\
+|    1|     1945,|\
+|    1|    guests|\
+|    1|       are|\
+|    1|  gathered|\
+|    1|       for|\
+|    1|       the|\
+|    1|   wedding|\
+|    1| reception|\
+|    1|        of|\
+|    1|       Don|\
+|    1|      Vito|\
+|    1|Corleone's|\
+|    1|  daughter|\
+|    1|    Connie|\
+|    1|    (Talia|\
+|    1|    Shire)|\
+|    1|       and|\
++-----+----------+\
+only showing top 20 rows\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \strokec3 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs32 \cf3 \cb5 Use DataFrame Specific Functions to do Word Count\cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf3 \cb1 \strokec3 \shad0 \
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs40 \cf7 \strokec7 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\fs26 \cf8 \cb5 \strokec8 wordsDF\cf3 \strokec3 .\cf8 \strokec8 groupby\cf3 \strokec3 (\cf9 \strokec9 "word"\cf3 \strokec3 ).\cf8 \strokec8 sum\cf3 \strokec3 ().\cf8 \strokec8 orderBy\cf3 \strokec3 (\cf9 \strokec9 "sum(count)"\cf3 \strokec3 , \cf8 \strokec8 ascending\cf3 \strokec3  \cf8 \strokec8 =\cf3 \strokec3  \cf10 \strokec10 0\cf3 \strokec3 ).\cf8 \strokec8 limit\cf3 \strokec3 (\cf10 \strokec10 10\cf3 \strokec3 ).\cf8 \strokec8 show\cf3 \strokec3 ()\
+\pard\pardeftab720\sl380\partightenfactor0
+\cf12 \strokec12 +----+----------+\
+|word|sum(count)|\
++----+----------+\
+| the|      8622|\
+|  to|      5225|\
+| and|      4940|\
+|   a|      3480|\
+|  of|      2763|\
+| his|      2185|\
+|  in|      2174|\
+|  is|      2153|\
+|that|      1983|\
+|  he|      1901|\
++----+----------+\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl440\qc\partightenfactor0
+\cf7 \cb6 \strokec7 \shad\shadx0\shady-20\shadr20\shado191 \shadc0 \
+}
